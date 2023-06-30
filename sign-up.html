@@ -7,68 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="author" content="Webestica.com">
         <meta name="description" content="Eduport- LMS, Education and Course Theme">
-        <!-- Dark mode -->
-        <script>
-            const storedTheme = localStorage.getItem('theme')
-
-            const getPreferredTheme = ()=>{
-                if (storedTheme) {
-                    return storedTheme
-                }
-                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-            }
-
-            const setTheme = function(theme) {
-                if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                    document.documentElement.setAttribute('data-bs-theme', 'dark')
-                } else {
-                    document.documentElement.setAttribute('data-bs-theme', theme)
-                }
-            }
-
-            setTheme(getPreferredTheme())
-
-            window.addEventListener('DOMContentLoaded', ()=>{
-                var el = document.querySelector('.theme-icon-active');
-                if (el != 'undefined' && el != null) {
-                    const showActiveTheme = theme=>{
-                        const activeThemeIcon = document.querySelector('.theme-icon-active use')
-                        const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
-                        const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
-
-                        document.querySelectorAll('[data-bs-theme-value]').forEach(element=>{
-                            element.classList.remove('active')
-                        }
-                        )
-
-                        btnToActive.classList.add('active')
-                        activeThemeIcon.setAttribute('href', svgOfActiveBtn)
-                    }
-
-                    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', ()=>{
-                        if (storedTheme !== 'light' || storedTheme !== 'dark') {
-                            setTheme(getPreferredTheme())
-                        }
-                    }
-                    )
-
-                    showActiveTheme(getPreferredTheme())
-
-                    document.querySelectorAll('[data-bs-theme-value]').forEach(toggle=>{
-                        toggle.addEventListener('click', ()=>{
-                            const theme = toggle.getAttribute('data-bs-theme-value')
-                            localStorage.setItem('theme', theme)
-                            setTheme(theme)
-                            showActiveTheme(theme)
-                        }
-                        )
-                    }
-                    )
-
-                }
-            }
-            )
-        </script>
+      
         <!-- Favicon -->
         <link rel="shortcut icon" href="images/favicon.ico">
         <!-- Google Font -->
@@ -80,6 +19,13 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap-icons.css">
         <!-- Theme CSS -->
         <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+
+
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+
     </head>
     <body>
         <!-- **************** MAIN CONTENT START **************** -->
@@ -183,12 +129,19 @@
                                             <p class="small position-absolute top-50 start-50 translate-middle bg-body px-5">Or</p>
                                         </div>
                                         <!-- Social btn -->
-                                        <div class="col-xxl-6 d-grid">
-                                            <a href="#" class="btn bg-google mb-2 mb-xxl-0">
+                                        <!-- <div class="col-xxl-6 d-grid" id="google-signin-button" onclick="initGoogleSignIn()">
+                                            <a class="btn bg-google mb-2 mb-xxl-0" >
                                                 <i class="fab fa-fw fa-google text-white me-2"></i>
                                                 Signup with Google
                                             </a>
-                                        </div>
+                                        </div> -->
+                                        <div id="g_id_onload" 
+                                        target="_blank"
+                                        data-client_id="257634213039-7ghgjilg4ptcggsvca3gu5aisnl0s0an.apps.googleusercontent.com"
+                                        data-ux_mode="redirect"
+                                        data-login_uri="https://accounts.google.com/gsi/status?client_id=257634213039-7ghgjilg4ptcggsvca3gu5aisnl0s0an.apps.googleusercontent.com%0A%20%20%20%20%20%20%20%20%20&as=n8muIYcOErqfYOGV19Hdqw">
+                                    </div>
+                                       <div class="g_id_signin" data-type="standard"></div>
                                         <!-- Social btn -->
                                         <div class="col-xxl-6 d-grid">
                                             <a href="#" class="btn bg-facebook mb-0">
@@ -218,6 +171,10 @@
         <!-- Bootstrap JS -->
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/script.js"></script>
+
         <script src="js/functions.js"></script>
+        <script src="js/script.js"></script>
+        
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
     </body>
 </html>

@@ -2706,7 +2706,7 @@ progress {
 .form-control {
     display: block;
     width: 100%;
-    padding: 0.5rem 19rem;
+    padding: 0.5rem 1rem;
     font-size: 0.9375rem;
     font-weight: 400;
     line-height: 1.5;
@@ -2723,10 +2723,7 @@ progress {
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 }
-.form-control::placeholder {
-    margin-right: 3%;
-    position: absolute;
-}
+
 
 @media (prefers-reduced-motion: reduce) {
     .form-control {
@@ -25166,3 +25163,8 @@ html[dir=rtl] .choices, html[dir=rtl] select option, html[dir=rtl] .choices__inp
 
 /*User CSS*/
 /*# sourceMappingURL=style.css.map */
+
+
+.heart-icon {
+    cursor: pointer;
+}
