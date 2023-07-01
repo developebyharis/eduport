@@ -6,6 +6,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="author" content="Webestica.com">
+        <meta name="google-signin-client_id" content="257634213039-7ghgjilg4ptcggsvca3gu5aisnl0s0an.apps.googleusercontent.com">
+
         <meta name="description" content="Eduport- LMS, Education and Course Theme">
       
         <!-- Favicon -->
@@ -135,13 +137,10 @@
                                                 Signup with Google
                                             </a>
                                         </div> -->
-                                        <div id="g_id_onload" 
-                                        target="_blank"
-                                        data-client_id="257634213039-7ghgjilg4ptcggsvca3gu5aisnl0s0an.apps.googleusercontent.com"
-                                        data-ux_mode="redirect"
-                                        data-login_uri="https://accounts.google.com/gsi/status?client_id=257634213039-7ghgjilg4ptcggsvca3gu5aisnl0s0an.apps.googleusercontent.com%0A%20%20%20%20%20%20%20%20%20&as=n8muIYcOErqfYOGV19Hdqw">
-                                    </div>
-                                       <div class="g_id_signin" data-type="standard"></div>
+                                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+	  <a href="#" onclick="signOut();">Sign out</a>
+
                                         <!-- Social btn -->
                                         <div class="col-xxl-6 d-grid">
                                             <a href="#" class="btn bg-facebook mb-0">
@@ -174,7 +173,6 @@
 
         <script src="js/functions.js"></script>
         <script src="js/script.js"></script>
-        
         <script src="https://apis.google.com/js/platform.js" async defer></script>
     </body>
 </html>

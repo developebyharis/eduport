@@ -431,34 +431,9 @@ courses.forEach(function(course) {
 
 	//   End Here
 
-	// Google OAuth
-	// function onSignIn(googleUser) {
-    //     // Handle the sign-in response
-    //     var idToken = googleUser.getAuthResponse().id_token;
-    //     // Send the ID token to your server for verification
-    // }
 
-    // function initGoogleSignIn() {
-    //     gapi.load('auth2', function() {
-    //         gapi.auth2.init({
-    //             client_id: '257634213039-7ghgjilg4ptcggsvca3gu5aisnl0s0an.apps.googleusercontent.com',
-    //         }).then(function() {
-    //             var auth2 = gapi.auth2.getAuthInstance();
-    //             auth2.attachClickHandler('google-signin-button', {}, onSignIn, function(error) {
-    //                 console.log('Sign-in error', error);
-    //             });
-    //         });
-    //     });
-    // }
 
-    // // Call the initialization function
-    // initGoogleSignIn();
-	// document.querySelector('button').addEventListener('click', function() {
-	// 	google.accounts.id.initialize({
-	// 	  client_id: 'YOUR_CLIENT_ID',
-	// 	  ux_mode: 'redirect',
-	// 	  redirect_uri: 'YOUR_LOGIN_ENDPOINT_URL',
-	// 	});
-	// 	google.accounts.id.prompt();
-	//   });
-	  
+
+	
+
+
