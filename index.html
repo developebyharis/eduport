@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en" data-bs-theme="light"><head>
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light"><head>
 	<title>Eduport - LMS, Education and Course Theme</title>
 
 	<!-- Meta Tags -->
@@ -6,12 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="author" content="Webestica.com">
 	<meta name="description" content="Eduport- LMS, Education and Course Theme">
-
 	<meta name="google-signin-client_id" content="257634213039-7ghgjilg4ptcggsvca3gu5aisnl0s0an.apps.googleusercontent.com">
-
-
-	
-
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="favicon.ico">
 
@@ -1029,50 +1025,38 @@ Popular course START -->
 		<!-- Tabs START -->
 		<ul class="nav nav-pills nav-pills-bg-soft justify-content-sm-center mb-4 px-3" id="course-pills-tab" role="tablist">
 			<!-- Tab item -->
-			<li class="nav-item me-2 me-sm-5">
-				<button class="nav-link mb-2 mb-md-0 active" id="course-pills-tab-1" data-bs-toggle="pill" data-bs-target="#course-pills-tabs-1" type="button" role="tab" aria-controls="course-pills-tabs-1" aria-selected="false">Web Design</button>
+			<li class="nav-item me-2 me-sm-5" >
+			  <button onclick="filterCourses('Web Design')" data-category="Web Design" class="nav-link mb-2 mb-md-0 active category-btn"   data-bs-toggle="pill"  type="button" role="tab"  aria-selected="true">Web Design</button>
 			</li>
 			<!-- Tab item -->
-			<li class="nav-item me-2 me-sm-5">
-				<button class="nav-link mb-2 mb-md-0" id="course-pills-tab-2" data-bs-toggle="pill" data-bs-target="#course-pills-tabs-2" type="button" role="tab" aria-controls="course-pills-tabs-2" aria-selected="false">Development</button>
+			<li class="nav-item me-2 me-sm-5 " >
+			  <button onclick="filterCourses('Development')" data-category="Development" class="nav-link mb-2 mb-md-0 category-btn"  data-bs-toggle="pill"  type="button" role="tab"  aria-selected="false">Development</button>
 			</li>
 			<!-- Tab item -->
-			<li class="nav-item me-2 me-sm-5">
-				<button class="nav-link mb-2 mb-md-0" id="course-pills-tab-3" data-bs-toggle="pill" data-bs-target="#course-pills-tabs-3" type="button" role="tab" aria-controls="course-pills-tabs-3" aria-selected="false">Graphic Design</button>
+			<li class="nav-item me-2 me-sm-5" >
+			  <button onclick="filterCourses('Graphic Design')" data-category="Graphic Design" class="nav-link mb-2 mb-md-0 category-btn"  data-bs-toggle="pill"  type="button" role="tab"  aria-selected="false">Graphic Design</button>
 			</li>
 			<!-- Tab item -->
-			<li class="nav-item me-2 me-sm-5">
-				<button class="nav-link mb-2 mb-md-0" id="course-pills-tab-4" data-bs-toggle="pill" data-bs-target="#course-pills-tabs-4" type="button" role="tab" aria-controls="course-pills-tabs-4" aria-selected="false">Marketing</button>
+			<li class="nav-item me-2 me-sm-5" >
+			  <button onclick="filterCourses('Marketing')" data-category="Marketing" class="nav-link mb-2 mb-md-0 category-btn"   data-bs-toggle="pill"  type="button" role="tab"  aria-selected="false">Marketing</button>
 			</li>
 			<!-- Tab item -->
-			<li class="nav-item me-2 me-sm-5">
-				<button class="nav-link mb-2 mb-md-0" id="course-pills-tab-5" data-bs-toggle="pill" data-bs-target="#course-pills-tabs-5" type="button" role="tab" aria-controls="course-pills-tabs-5" aria-selected="false">Finance</button>
+			<li class="nav-item me-2 me-sm-5 " > 
+			  <button onclick="filterCourses('Finance')" data-category="Finance" class="nav-link mb-2 mb-md-0 category-btn"  data-bs-toggle="pill" type="button" role="tab"  aria-selected="false">Finance</button>
 			</li>
-		</ul>
+		  </ul>
 		<!-- Tabs END -->
 
 		<!-- Tabs content START -->
-		<div class="tab-content" id="course-pills-tabContent">
+		<div class="tab-content">
 			<!-- Content START -->
 			<div class="tab-pane fade show active" id="course-pills-tabs-1" role="tabpanel" aria-labelledby="course-pills-tab-1">
 				<div class="row g-4" id="courseContainer">
-
-					
-					<!-- Card item END -->
-				</div>
-			</div>
-			<!-- Content END -->
-
-			<!-- Content START -->
-			<div class="tab-pane fade" id="course-pills-tabs-4" role="tabpanel" aria-labelledby="course-pills-tab-4">
-				<div class="row g-4" id="courseContainer">
-					<!-- Card item START -->
 					<!-- Card item END -->
 				</div>
 			</div>
 			<!-- Content END -->
 		</div>
-		<!-- Tabs content END -->
 	</div>
 </section>
 <!-- =======================
