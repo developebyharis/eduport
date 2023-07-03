@@ -59,9 +59,18 @@ const storedTheme = localStorage.getItem('theme')
 
 		// Dark Mode end Here
 
+         // Redirect to the course detail page with the selected courseId
+  function redirectToCourseDetail(courseId) {
+    // Construct the URL with the courseId as a query parameter
+    const courseDetailURL = `course-detail.html?id=${courseId}`;
+    window.location.href = courseDetailURL;
+  }
 
-    
-    
+        // Retrieve the course ID from the URL query parameter
+  const urlParams = new URLSearchParams(window.location.search);
+  const courseId = urlParams.get("id");
+
+
 
 		
 		// Array of Courses
@@ -240,18 +249,18 @@ const storedTheme = localStorage.getItem('theme')
 		
 		filteredCourses.forEach(function (course) {
 		  courseList += `
-			<div class="col-sm-6 col-lg-4 col-xl-3">
+			<div class="col-sm-6 col-lg-4 col-xl-3 course" data-course-id="${course.id}">
 			  <div class="card shadow h-100">
-				<a class="course-link" href="course-detail.html" data-course-id="${course.id}">
-				  <img src="${course.courseImage}"  class="card-img-top" alt="${course.courseCategory}">
+				<a class="course-link" href="course-detail.html" >
+				  <img src="${course.courseImage}" class="card-img-top" alt="${course.courseCategory}">
 				</a>
 				<div class="card-body pb-0">
 				  <div class="d-flex justify-content-between mb-2">
-					<a href="#" data-course-id="${course.id}" class="badge bg-success bg-opacity-10 text-success">${course.courseLevel}</a>
+					<a href="#"  class="badge bg-success bg-opacity-10 text-success">${course.courseLevel}</a>
 					<i class="far fa-bookmark"></i>
 				  </div>
-				  <h5 class="card-title fw-normal" ><a onclick="redirectToCourseDetailPage(${course.id}); return false;" class="course-link" href="course-detail.html?${course.id}" data-course-id="${course.id}" ${course.courseTitle}">${course.courseTitle}</a></h5>
-				  <p class="text-truncate-2 mb-2" data-course-id="${course.id}">${course.courseDescription}</p>
+				  <h5 class="card-title fw-normal" ><a   class="course-link" href="course-detail.html?${course.id}"  ${course.courseTitle}">${course.courseTitle}</a></h5>
+				  <p class="text-truncate-2 mb-2">${course.courseDescription}</p>
 				  <ul class="list-inline mb-0">
 					${generateRatingStars(course.courseRating)}
 				  </ul>
@@ -262,6 +271,7 @@ const storedTheme = localStorage.getItem('theme')
 					<span class="h6 fw-light mb-0"><i class="far fa-clock text-danger me-2"></i>${course.courseTotalHours + "h"} ${course.courseTotalMin + "m"}</span>
 					<span class="h6 fw-light mb-0"><i class="fas fa-table text-orange me-2"></i>${course.courseTotalLectures + " Lectures"}</span>
 				  </div>
+                  
 				</div>
 			  </div>
 			</div>
@@ -272,6 +282,14 @@ const storedTheme = localStorage.getItem('theme')
 		courseContainer.innerHTML = courseList;
 	  };
 
+
+       // Redirect to the course detail page with the selected courseId
+  function redirectToCourseDetail(courseId) {
+    // Construct the URL with the courseId as a query parameter
+    const courseDetailURL = `course-detail.html?id=${courseId}`;
+    window.location.href = courseDetailURL;
+  }
+
 	  document.addEventListener("DOMContentLoaded", function() {
 
 		filterCourses("Web Design");
@@ -279,22 +297,7 @@ const storedTheme = localStorage.getItem('theme')
       
 
 
-	//   / Attach event listeners to course links
-let courseLinks = document.getElementsByClassName("course-link");
-for (let i = 0; i < courseLinks.length; i++) {
-  let courseLink = courseLinks[i];
-  courseLink.addEventListener("click", function(event) {
-    event.preventDefault(); // Prevent the default link behavior
-    let courseId = this.getAttribute("data-course-id");
-    redirectToCourseDetailPage(courseId);
-  });
-}
 
-function redirectToCourseDetailPage(courseId) {
-  // Generate the dynamic href based on the course ID
-  let courseDetailURL = `course-detail.html?id=${courseId}`;
-  window.location.href = courseDetailURL;
-};
 	
 	function generateRatingStars(rating) {
 		let ratingHtml = "";
@@ -327,16 +330,7 @@ function redirectToCourseDetailPage(courseId) {
 	  };
 	
 
-	  document.addEventListener('DOMContentLoaded', function() {
-		// ... code for creating category buttons ...
-	  
-		// Trigger click event on the selected category button after page reload
-		const selectedCategory = localStorage.getItem('selectedCategory') || 'web-design';
-		document.getElementById(selectedCategory).click();
-	  
-		// Update the bookmark state based on the selected category
-		updateBookmarkState(selectedCategory);
-	  });
+	
 	  
 	  // Function to update bookmark state for the selected category
 	  function updateBookmarkState(category) {
@@ -384,26 +378,26 @@ function handleCategoryClick(category) {
 
 // DATA RETREVING OF THE COURSES TO COURSE_DETAIL.HTML
 
-// // Find the course object with the matching ID
 
   
 
 
-
-
-
+// Find the selected course using the courseId
 const selectedCourse = courses.find(course => course.id === parseInt(courseId));
 
+// Use the selectedCourse object to populate the course detail on the page
 if (selectedCourse) {
-  let courseDetail = `
+  const courseDetailContainer = document.getElementById("courseDetailContainer");
+
+  const courseDetailHTML = `
 
 	                   <div class="row py-5">
                         <div class="col-lg-8">
                             <!-- Badge -->
                             <h6 class="mb-3 font-base bg-primary text-white py-2 px-4 rounded-2 d-inline-block" id="courseCategory">${course.courseCategory}</h6>
                             <!-- Title -->
-                            <h1 id="courseTitle">${selectedCourse.courseTitle}</h1>
-                            <p id="courseDescription">${selectedCourse.courseDescription}</p>
+                            <h1>${selectedCourse.courseTitle}</h1>
+                            <p >${selectedCourse.courseDescription}</p>
                             <!-- Content -->
                             <ul class="list-inline mb-0">
                                 <li class="list-inline-item h6 me-3 mb-1 mb-sm-0">
@@ -2064,10 +2058,13 @@ Page content START -->
                     </div>
 					</div>
 					`;
+              
+ 
+                    courseDetailContainer.innerHTML = courseDetailHTML;
+                }
 
-                    let courseDetailContainer = document.getElementById("courseDetailContainer");
-                    courseDetailContainer.innerHTML = courseDetail;
-                  };
+
+                  
                   
 
 
