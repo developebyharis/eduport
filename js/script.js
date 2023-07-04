@@ -57,16 +57,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Dark Mode end Here
 
-// Redirect to the course detail page with the selected courseId
-function redirectToCourseDetail(courseId) {
-    // Construct the URL with the courseId as a query parameter
-    const courseDetailURL = `course-detail.html?id=${courseId}`;
-    window.location.href = courseDetailURL;
-}
-
-// Retrieve the course ID from the URL query parameter
-const urlParams = new URLSearchParams(window.location.search);
-const courseId = urlParams.get("id");
 
 
 
@@ -793,7 +783,6 @@ let courses = [{
 
 
 
-
 function filterCourses(category) {
     let filteredCourses = courses.filter(function(course) {
         return course.courseCategory === category;
@@ -803,7 +792,7 @@ function filterCourses(category) {
 
     filteredCourses.forEach(function(course) {
         courseList += `
-	  <div class="col-sm-6 col-lg-4 col-xl-3" >
+	  <div class="col-sm-6 col-lg-4 col-xl-3 course" data-course-id="${course.id}">
 			  <div class="card shadow h-100">
 				<a class="course-link" href="course-detail.html" >
 				  <img src="${course.courseImage}" class="card-img-top" alt="${course.courseCategory}">
@@ -811,7 +800,7 @@ function filterCourses(category) {
 				<div class="card-body pb-0">
 				  <div class="d-flex justify-content-between mb-2">
 					<a href="#"  class="badge bg-success bg-opacity-10 text-success">${course.courseLevel}</a>
-					<i class="heart-icon far fa-heart"></i>
+					<i class="heart-icon far fa-heart" data-course-id="${course.id}"></i>
 			    </div>
 				  <h5 class="card-title fw-normal">
 				  <a class="course-link" href="course-detail.html?id=${course.id}">${course.courseTitle}</a>
@@ -840,14 +829,93 @@ function filterCourses(category) {
         let courseContainer = document.getElementById("courseContainer");
         courseContainer.innerHTML = courseList;
     });
-}
+	updateHeartIconState();
+};
 
-// this event listner activeate the web design category when the website open or when the page reloads
+
+
+function updateHeartIconState() {
+	const heartIcons = document.getElementsByClassName('heart-icon');
+  
+	for (let i = 0; i < heartIcons.length; i++) {
+	  const heartIcon = heartIcons[i];
+	  const courseId = heartIcon.dataset.courseId;
+  
+	  const storedState = localStorage.getItem(`heartIconState-${courseId}`);
+	  if (storedState === 'true') {
+		heartIcon.classList.add('fas', 'text-danger');
+	  } else {
+		heartIcon.classList.remove('fas', 'text-danger');
+	  }
+  
+	  heartIcon.addEventListener('click', function() {
+		this.classList.toggle('fas');
+		this.classList.toggle('text-danger');
+  
+		const currentState = this.classList.contains('fas');
+		localStorage.setItem(`heartIconState-${courseId}`, currentState);
+	  });
+	}
+  }
+  
+
+// this event listner activeate the selected category and 
+// if it's your first time on the webiste then i'll redirect to the web design category
+
 document.addEventListener("DOMContentLoaded", function() {
-
-    filterCourses("Web Design");
-});
-
+	// Retrieve the selected category from local storage
+	const selectedCategory = localStorage.getItem("selectedCategory");
+  
+	// Get the category buttons
+	const categoryButtons = document.getElementsByClassName("category-btn");
+  
+	// Function to handle category button click
+	function handleCategoryClick(category) {
+	  // Remove the "active" class from all category buttons
+	  Array.from(categoryButtons).forEach((btn) => {
+		btn.classList.remove("active");
+	  });
+  
+	  // Add the "active" class to the clicked button
+	  this.classList.add("active");
+  
+	  // Call the filterCourses function with the selected category
+	  filterCourses(category);
+  
+	  // Store the selected category in local storage
+	  localStorage.setItem("selectedCategory", category);
+	}
+  
+	// Add click event listeners to category buttons
+	Array.from(categoryButtons).forEach((btn) => {
+	  const category = btn.dataset.category;
+	  btn.addEventListener("click", handleCategoryClick.bind(btn, category));
+	});
+  
+	// Check if a category is stored
+	if (selectedCategory) {
+	  // Find the button corresponding to the stored category
+	  const button = Array.from(categoryButtons).find(
+		(btn) => btn.dataset.category === selectedCategory
+	  );
+  
+	  // If found, trigger a click event on the button
+	  if (button) {
+		button.click();
+	  }
+	} else {
+	  // If no category is stored, default to "Web Design" and trigger a click event
+	  const defaultCategory = "Web Design";
+	  const defaultButton = Array.from(categoryButtons).find(
+		(btn) => btn.dataset.category === defaultCategory
+	  );
+  
+	  if (defaultButton) {
+		defaultButton.click();
+	  }
+	}
+  });
+  
 // end here
 
 //    Course list end here
@@ -855,34 +923,39 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Heart function start here
 
-document.addEventListener('DOMContentLoaded', function() {
-    const heartIcons = document.getElementsByClassName('heart-icon');
+// document.addEventListener('DOMContentLoaded', function() {
+//     const heartIcons = document.getElementsByClassName('heart-icon');
 
-    // Loop through each heart icon and add the event listener
-    for (let i = 0; i < heartIcons.length; i++) {
-        const heartIcon = heartIcons[i];
+//     // Loop through each heart icon and add the event listener
+//     for (let i = 0; i < heartIcons.length; i++) {
+//         const heartIcon = heartIcons[i];
+//         const courseElement = heartIcon.closest('.course');
+//         const courseId = courseElement.dataset.courseId;
 
-        // Set the initial state of the heart icon based on the stored state (if any)
-        const storedState = localStorage.getItem(`heartIconState-${i}`);
-        if (storedState === 'true') {
-            heartIcon.classList.add('fas', 'text-danger');
-        } else {
-            heartIcon.classList.add('far');
-        }
+//         // Set the initial state of the heart icon based on the stored state (if any)
+//         const storedState = localStorage.getItem(`heartIconState-${courseId}`);
+//         if (storedState === 'true') {
+//             heartIcon.classList.add('fas', 'text-danger');
+//         } else {
+//             heartIcon.classList.add('far');
+//         }
 
-        heartIcon.addEventListener('click', function() {
-            // Toggle the 'fas' and 'far' classes to change the heart icon style
-            this.classList.toggle('fas');
-            this.classList.toggle('far');
-            // Toggle the 'text-danger' class to change the color for the clicked heart icon
-            this.classList.toggle('text-danger');
+//         heartIcon.addEventListener('click', function() {
+//             // Toggle the 'fas' and 'far' classes to change the heart icon style
+//             this.classList.toggle('fas');
+//             this.classList.toggle('far');
+//             // Toggle the 'text-danger' class to change the color for the clicked heart icon
+//             this.classList.toggle('text-danger');
 
-            // Save the updated state to local storage
-            const currentState = this.classList.contains('fas');
-            localStorage.setItem(`heartIconState-${i}`, currentState);
-        });
-    }
-});
+//             // Save the updated state to local storage immediately
+//             const currentState = this.classList.contains('fas');
+//             localStorage.setItem(`heartIconState-${courseId}`, currentState);
+//         });
+//     }
+// });
+
+
+
 
 //   Heart function end here
   
@@ -2592,10 +2665,8 @@ function generateRatingStars(rating) {
     return ratingHtml;
 };
 
-
-
-
 //   End Here
+
 
 
 
