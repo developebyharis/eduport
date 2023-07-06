@@ -104,8 +104,8 @@ function filterCourses(category) {
 					  </div>
 					  <!-- Price -->
 					  <div>
-					  <h4 class="text-success mb-0 item-show">${course.courseCurrentPrice}</h4>
-						  <button class="btn btn-sm btn-success-soft item-show-hover" data-course-id="${course.id}" onclick="addToCart(${course.id})"><i class="fas fa-shopping-cart me-2"></i>Add to cart</button>
+					  <h4 class="text-success mb-0 item-show">${"$" + course.courseCurrentPrice}</h4>
+					  <button class="btn btn-sm btn-success-soft item-show-hover" data-course-id="${course.id}" onclick="addToCart(${course.id})"><i class="fas fa-shopping-cart me-2"></i>Add to cart</button>
 					  </div>
 				  </div
 			  </div>
@@ -122,8 +122,12 @@ function filterCourses(category) {
 };
 
 
-var cartCount = 0;
-  var cartCountElement = document.getElementById("cartCount");
+// Initialize cart count from local storage or default to 0
+var cart = JSON.parse(localStorage.getItem("cart")) || [];
+var cartCount = cart.length;
+var cartCountElement = document.getElementById("cartCount");
+cartCountElement.textContent = cartCount;
+
     // Add the course to the cart
     function addToCart(courseId) {
 		var course = courses.find(function(course) {
@@ -138,12 +142,13 @@ var cartCount = 0;
 
 
 		  cartCount++;
-      cartCountElement.textContent = cartCount;
+		  cartCountElement.textContent = cartCount;
+		  localStorage.setItem("cartCount", cartCount); 
   
 		  // Update the cart display
 		  var cartList = document.getElementById("cart-list");
 		  var cartItemHTML = `
-		  <div class="row p-3 g-2" id="cart-items"> 
+		  <div class="row p-3 g-2" id="cartItems"> 
 		  <div class="col-3">
 			  <img class="rounded-2 product-image" src="${course.courseImage}" alt="avatar">
 		  </div>
@@ -151,17 +156,11 @@ var cartCount = 0;
 		  <div class="col-9">
 			  <div class="d-flex justify-content-between">
 				  <h6 class="m-0">${course.courseTitle}</h6>
-				  <a href="#" class="small text-primary-hover"><i class="bi bi-x-lg"></i></a>
-			  </div>
-			  <form class="choices-sm pt-2 col-4">
-				  <select class="form-select js-choice border-0 bg-transparent" data-search-enabled="false">
-					  <option>1</option>
-					  <option>2</option>
-					  <option>3</option>
-					  <option>4</option>
-					  <option>5</option>
-				  </select>
-			  </form>
+				  <a class=" remove-btn small text-primary-hover" onclick="removeFromCart(event, ${course.id})"><i class="bi bi-x-lg"></i></a>
+				  </div>
+				  <div>
+				  <h4 class="text-success pt-2 fs-5 mb-0 item-show">${"$" + course.courseCurrentPrice}</h4>
+				  </div>
 		  </div>
 	  </div> 
 		  `;
@@ -176,7 +175,7 @@ var cartCount = 0;
   
 	  cart.forEach(function(course) {
 		var cartItemHTML = `
-		<div class="row p-3 g-2" id="cart-items"> 
+		<div class="row p-3 g-2" id="cartItems"> 
 		<div class="col-3">
 			<img class="rounded-2 product-image" src="${course.courseImage}" alt="avatar">
 		</div>
@@ -184,23 +183,50 @@ var cartCount = 0;
 		<div class="col-9">
 			<div class="d-flex justify-content-between">
 				<h6 class="m-0">${course.courseTitle}</h6>
-				<a href="#" class="small text-primary-hover"><i class="bi bi-x-lg"></i></a>
-			</div>
-			<form class="choices-sm pt-2 col-4">
-				<select class="form-select js-choice border-0 bg-transparent" data-search-enabled="false">
-					<option>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-				</select>
-			</form>
+				<a class=" remove-btn small text-primary-hover" onclick="removeFromCart(event, ${course.id})"><i class="bi bi-x-lg"></i></a>
+
+				</div>
+				<div>
+				<h4 class="text-success pt-2 fs-5 mb-0 item-show">${"$" + course.courseCurrentPrice}</h4>
+				</div>
+
+			
 		</div>
 	</div> 
 		`;
 		cartList.innerHTML += cartItemHTML;
 	  });
 
+
+
+		
+
+
+		
+
+
+
+
+	 // Remove the course from the cart
+	 function removeFromCart(event, courseId) {
+		event.preventDefault();
+  
+		// Remove the course from the cart
+		cart = cart.filter(function(course) {
+		  return course.id !== courseId;
+		});
+  
+		// Update the cart in local storage
+		localStorage.setItem("cart", JSON.stringify(cart));
+  
+		// Update the cart count
+		cartCount = cart.length;
+		cartCountElement.textContent = cartCount;
+  
+		// Remove the cart item from the display
+		var cartItem = event.target.closest("#cartItems");
+		cartItem.remove();
+	  }
 
 	//   Add to cart function end here
 

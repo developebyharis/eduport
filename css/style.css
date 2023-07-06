@@ -25171,7 +25171,18 @@ html[dir=rtl] .choices, html[dir=rtl] select option, html[dir=rtl] .choices__inp
 
 .scrollable-container{
     overflow-y: scroll;
-    height: 300px;
+    min-height: auto;
+    max-height: 300px;
     overflow-x: hidden;
 }
- 
+ .remove-btn{
+    cursor: pointer;
+ }
+
+ .scrollable-checkout{
+    overflow-y: scroll;
+    min-height: auto;
+    max-height: 300px;
+    overflow-x: hidden;
+
+ }
