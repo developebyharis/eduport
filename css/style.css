@@ -25169,4 +25169,9 @@ html[dir=rtl] .choices, html[dir=rtl] select option, html[dir=rtl] .choices__inp
     cursor: pointer;
 }
 
+.scrollable-container{
+    overflow-y: scroll;
+    height: 300px;
+    overflow-x: hidden;
+}
  

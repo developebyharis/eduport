@@ -481,73 +481,22 @@
 						<i class="bi bi-cart3 fa-fw"></i>
 					</a>
 					<!-- badge -->
-					<span class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-dark mt-xl-2 ms-n1">2 
+					<span class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-dark mt-xl-2 ms-n1" id="cartCount">0 
 						<span class="visually-hidden">unread messages</span>
 					</span>
 
 					<!-- Cart dropdown menu START -->
-					<div class="dropdown-menu dropdown-animation dropdown-menu-end dropdown-menu-size-md p-0 shadow-lg border-0">
+					<div class="dropdown-menu dropdown-animation dropdown-menu-end dropdown-menu-size-md p-0 shadow-lg border-0 scrollable-container">
 						<div class="card bg-transparent">
 							<div class="card-header bg-transparent border-bottom py-4">
 								<h5 class="m-0">Cart items</h5>
 							</div>
-							<div class="card-body p-0">
-
-								<!-- Cart item START -->
-								<div class="row p-3 g-2">
-									<!-- Image -->
-									<div class="col-3">
-										<img class="rounded-2" src="images/book/2.jpg" alt="avatar">
-									</div>
-
-									<div class="col-9">
-										<!-- Title -->
-										<div class="d-flex justify-content-between">
-											<h6 class="m-0">Angular 4 Tutorial in audio (Compact Disk)</h6>
-											<a href="#" class="small text-primary-hover"><i class="bi bi-x-lg"></i></a>
-										</div>
-										<!-- Select item -->
-										<form class="choices-sm pt-2 col-4">
-											<select class="form-select js-choice border-0 bg-transparent" data-search-enabled="false">
-												<option>1</option>
-												<option selected>2</option>
-												<option>3</option>
-												<option>4</option>
-												<option>5</option>
-											</select>
-										</form>
-									</div>
-								</div>
-								<!-- Cart item END -->
-
+							<!-- Cart Item display using the cart-list id -->
+							<div class="card-body p-0" id="cart-list">
 								<!-- Divider -->
 								<hr class="m-0">
 
-								<!-- Cart item START -->
-								<div class="row p-3 g-2">
-									<!-- Image -->
-									<div class="col-3">
-										<img class="rounded-2" src="images/book/4.jpg" alt="avatar">
-									</div>
-
-									<div class="col-9">
-										<!-- Title -->
-										<div class="d-flex justify-content-between">
-											<h6 class="m-0">The Principles of Beautiful Graphics Design (Paperback)</h6>
-											<a href="#" class="small text-primary-hover"><i class="bi bi-x-lg"></i></a>
-										</div>
-										<!-- Select item -->
-										<form class="choices-sm pt-2 col-4">
-											<select class="form-select js-choice border-0 bg-transparent" data-search-enabled="false">
-												<option selected>1</option>
-												<option>2</option>
-												<option>3</option>
-												<option>4</option>
-												<option>5</option>
-											</select>
-										</form>
-									</div>
-								</div>
+								
 								<!-- Cart item END -->
 
 							</div>
@@ -1050,8 +999,8 @@ Popular course START -->
 		<!-- Tabs content START -->
 		<div class="tab-content">
 			<!-- Content START -->
-			<div class="tab-pane fade show active" id="course-pills-tabs-1" role="tabpanel" aria-labelledby="course-pills-tab-1">
-				<div class="row g-4" id="courseContainer">
+			<div class="tab-pane fade  show active" id="course-pills-tabs-1" role="tabpanel" aria-labelledby="course-pills-tab-1">
+				<div class="row g-4 " id="courseContainer">
 					<!-- Card item END -->
 				</div>
 			</div>
@@ -1543,7 +1492,7 @@ Footer END -->
 <script src="js/functions.js"></script>
 
 <script src="js/script.js"></script>
-<script src="js/course-detail.js"></script>
+<script src="js/course-detail-array.js"></script>
 
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 

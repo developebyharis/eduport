@@ -57,731 +57,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Dark Mode end Here
 
-
-
-
-
-// Array of Courses
-let courses = [{
-        id: 1,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Web Design",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Web Design",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-    {
-        id: 2,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Graphic Design",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Graphic Design",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-    {
-        id: 3,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Development",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Development",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-    {
-        id: 4,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Development",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Development",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-    {
-        id: 5,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Marketing",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Marketing",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-    {
-        id: 6,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Finance",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Finance",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-    {
-        id: 7,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Finance",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Finance",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-    {
-        id: 8,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Marketing",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Marketing",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-    {
-        id: 9,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Graphic Design",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Graphic Design",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-
-    {
-        id: 10,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Web Design",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Web Design",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-    {
-        id: 11,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Web Design",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Web Design",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-    {
-        id: 12,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Graphic Design",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Graphic Design",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-    {
-        id: 13,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Development",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Development",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-    {
-        id: 14,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Development",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Development",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-    {
-        id: 15,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Marketing",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Marketing",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-    {
-        id: 16,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Finance",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Finance",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-    {
-        id: 17,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Finance",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Finance",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-    {
-        id: 18,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Marketing",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Marketing",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-    {
-        id: 19,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Graphic Design",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Graphic Design",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-
-    {
-        id: 20,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Web Design",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Web Design",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-    {
-        id: 21,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Web Design",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Web Design",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-    {
-        id: 22,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Graphic Design",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Graphic Design",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-    {
-        id: 23,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Development",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Development",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-    {
-        id: 24,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Development",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Development",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-    {
-        id: 25,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Marketing",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Marketing",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-    {
-        id: 26,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Finance",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Finance",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-    {
-        id: 27,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Finance",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Finance",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-    {
-        id: 28,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Marketing",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Marketing",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-    {
-        id: 29,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Graphic Design",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Graphic Design",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-
-    {
-        id: 30,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Web Design",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Web Design",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-    {
-        id: 31,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Web Design",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Web Design",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-    {
-        id: 32,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Graphic Design",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Graphic Design",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-    {
-        id: 33,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Development",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Development",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-    {
-        id: 34,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Development",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Development",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-    {
-        id: 35,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Marketing",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Marketing",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-    {
-        id: 36,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Finance",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Finance",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-    {
-        id: 37,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Finance",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Finance",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-    {
-        id: 38,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Marketing",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Marketing",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-    {
-        id: 39,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Graphic Design",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Graphic Design",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-
-    {
-        id: 40,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Web Design",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Web Design",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
-    }
-
-    ,
-
-];
-
-
+// Courses Rendering on index page and filter according to category
 
 function filterCourses(category) {
     let filteredCourses = courses.filter(function(course) {
@@ -792,8 +68,9 @@ function filterCourses(category) {
 
     filteredCourses.forEach(function(course) {
         courseList += `
-	  <div class="col-sm-6 col-lg-4 col-xl-3 course" data-course-id="${course.id}">
-			  <div class="card shadow h-100">
+	       <div class="col-sm-6 col-lg-4 col-xl-4 course " data-course-id="${course.id}">
+			  <div class="card shadow h-100 ">
+			  <div class="card action-trigger-hover bg-transparent">
 				<a class="course-link" href="course-detail.html" >
 				  <img src="${course.courseImage}" class="card-img-top" alt="${course.courseCategory}">
 				</a>
@@ -811,28 +88,121 @@ function filterCourses(category) {
 				  </ul>
 				</div>
 				<div class="card-footer pt-0 pb-3">
-				  <hr>
-				  <div class="d-flex justify-content-between">
+				<div class="d-flex justify-content-between">
 					<span class="h6 fw-light mb-0"><i class="far fa-clock text-danger me-2"></i>${course.courseTotalHours + "h"} ${course.courseTotalMin + "m"}</span>
 					<span class="h6 fw-light mb-0"><i class="fas fa-table text-orange me-2"></i>${course.courseTotalLectures + " Lectures"}</span>
 				  </div>
-                  
-				</div>
+				  <hr>
+				  <!-- Avatar and Price -->
+				  <div class="d-flex justify-content-between align-items-center">
+					  <!-- Avatar -->
+					  <div class="d-flex align-items-center">
+						  <div class="avatar avatar-sm">
+							  <img class="avatar-img rounded-1" src="images/10.jpg" alt="avatar">
+						  </div>
+						  <p class="mb-0 ms-2"><a href="#" class="h6 fw-light mb-0">Larry Lawson</a></p>
+					  </div>
+					  <!-- Price -->
+					  <div>
+					  <h4 class="text-success mb-0 item-show">${course.courseCurrentPrice}</h4>
+						  <button class="btn btn-sm btn-success-soft item-show-hover" data-course-id="${course.id}" onclick="addToCart(${course.id})"><i class="fas fa-shopping-cart me-2"></i>Add to cart</button>
+					  </div>
+				  </div
 			  </div>
-
+				</div>
+				</div>
 			</div>
-
-
-
-	  `;
+			</div>`;
 
         let courseContainer = document.getElementById("courseContainer");
         courseContainer.innerHTML = courseList;
     });
+
 	updateHeartIconState();
 };
 
 
+var cartCount = 0;
+  var cartCountElement = document.getElementById("cartCount");
+    // Add the course to the cart
+    function addToCart(courseId) {
+		var course = courses.find(function(course) {
+		  return course.id === courseId;
+		});
+  
+		if (course) {
+		  // Perform the necessary actions to add the course to the cart
+		  var cart = JSON.parse(localStorage.getItem("cart")) || [];
+		  cart.push(course);
+		  localStorage.setItem("cart", JSON.stringify(cart));
+
+
+		  cartCount++;
+      cartCountElement.textContent = cartCount;
+  
+		  // Update the cart display
+		  var cartList = document.getElementById("cart-list");
+		  var cartItemHTML = `
+		  <div class="row p-3 g-2" id="cart-items"> 
+		  <div class="col-3">
+			  <img class="rounded-2 product-image" src="${course.courseImage}" alt="avatar">
+		  </div>
+
+		  <div class="col-9">
+			  <div class="d-flex justify-content-between">
+				  <h6 class="m-0">${course.courseTitle}</h6>
+				  <a href="#" class="small text-primary-hover"><i class="bi bi-x-lg"></i></a>
+			  </div>
+			  <form class="choices-sm pt-2 col-4">
+				  <select class="form-select js-choice border-0 bg-transparent" data-search-enabled="false">
+					  <option>1</option>
+					  <option>2</option>
+					  <option>3</option>
+					  <option>4</option>
+					  <option>5</option>
+				  </select>
+			  </form>
+		  </div>
+	  </div> 
+		  `;
+		  cartList.innerHTML += cartItemHTML;
+		}
+	  }
+  
+  
+	  // Retrieve cart items from localStorage and display them in the cart-list div
+	  var cart = JSON.parse(localStorage.getItem("cart")) || [];
+	  var cartList = document.getElementById("cart-list");
+  
+	  cart.forEach(function(course) {
+		var cartItemHTML = `
+		<div class="row p-3 g-2" id="cart-items"> 
+		<div class="col-3">
+			<img class="rounded-2 product-image" src="${course.courseImage}" alt="avatar">
+		</div>
+
+		<div class="col-9">
+			<div class="d-flex justify-content-between">
+				<h6 class="m-0">${course.courseTitle}</h6>
+				<a href="#" class="small text-primary-hover"><i class="bi bi-x-lg"></i></a>
+			</div>
+			<form class="choices-sm pt-2 col-4">
+				<select class="form-select js-choice border-0 bg-transparent" data-search-enabled="false">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select>
+			</form>
+		</div>
+	</div> 
+		`;
+		cartList.innerHTML += cartItemHTML;
+	  });
+
+
+	//   Add to cart function end here
 
 function updateHeartIconState() {
 	const heartIcons = document.getElementsByClassName('heart-icon');
@@ -920,39 +290,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //    Course list end here
 
-
-// Heart function start here
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     const heartIcons = document.getElementsByClassName('heart-icon');
-
-//     // Loop through each heart icon and add the event listener
-//     for (let i = 0; i < heartIcons.length; i++) {
-//         const heartIcon = heartIcons[i];
-//         const courseElement = heartIcon.closest('.course');
-//         const courseId = courseElement.dataset.courseId;
-
-//         // Set the initial state of the heart icon based on the stored state (if any)
-//         const storedState = localStorage.getItem(`heartIconState-${courseId}`);
-//         if (storedState === 'true') {
-//             heartIcon.classList.add('fas', 'text-danger');
-//         } else {
-//             heartIcon.classList.add('far');
-//         }
-
-//         heartIcon.addEventListener('click', function() {
-//             // Toggle the 'fas' and 'far' classes to change the heart icon style
-//             this.classList.toggle('fas');
-//             this.classList.toggle('far');
-//             // Toggle the 'text-danger' class to change the color for the clicked heart icon
-//             this.classList.toggle('text-danger');
-
-//             // Save the updated state to local storage immediately
-//             const currentState = this.classList.contains('fas');
-//             localStorage.setItem(`heartIconState-${courseId}`, currentState);
-//         });
-//     }
-// });
 
 
 
@@ -2668,7 +2005,103 @@ function generateRatingStars(rating) {
 //   End Here
 
 
+document.addEventListener("DOMContentLoaded", function() {
+	// Get the element where you want to display the HTML content
+	const trendingCoursesContainer = document.getElementById('trendingCourses');
+  
+	// Initialize the trending courses array
+	let trendingCourses = [];
+  
+	// Function to generate HTML for a single course
+	function generateCourseHTML(course) {
+	  return `
+		<div class="card action-trigger-hover border bg-transparent">
+		  <!-- Image -->
+		  <img src="${course.courseImage}" class="card-img-top" alt="course image">
+		  <!-- Ribbon -->
+		  <div class="ribbon mt-3"><span>Free</span></div>
+		  <!-- Card body -->
+		  <div class="card-body pb-0">
+			<!-- Badge and favorite -->
+			<div class="d-flex justify-content-between mb-3">
+			  <span class="hstack gap-2">
+				<a href="#" class="badge bg-primary bg-opacity-10 text-primary">${course.courseCategory}</a>
+				<a href="#" class="badge text-bg-dark">${course.courseLevel}</a>
+			  </span>
+			  <a href="#" class="h6 fw-light mb-0"><i class="far fa-bookmark"></i></a>
+			</div>
+			<!-- Title / -->
+			<h5 class="card-title"><a href="#">${course.courseTitle}</a></h5>
+			<!-- Rating -->
+			<div class="d-flex justify-content-between mb-2">
+			  <div class="hstack gap-2">
+				<p class="text-warning m-0">${course.courseRating}<i class="fas fa-star text-warning ms-1"></i></p>
+				<span class="small">(${course.courseTotalStrength})</span>
+			  </div>
+			  <div class="hstack gap-2">
+				<p class="h6 fw-light mb-0 m-0">${course.courseTotalStrength}</p>
+				<span class="small">(Student)</span>
+			  </div>
+			</div>
+			<!-- Time -->
+			<div class="hstack gap-3">
+			  <span class="h6 fw-light mb-0"><i class="far fa-clock text-danger me-2"></i>${course.courseTotalHours}h ${course.courseTotalMin}m</span>
+			  <span class="h6 fw-light mb-0"><i class="fas fa-table text-orange me-2"></i>${course.courseTotalLectures} lectures</span>
+			</div>
+		  </div>
+		  <!-- Card footer -->
+		  <div class="card-footer pt-0 bg-transparent">
+			<hr>
+			<!-- Avatar and Price -->
+			<div class="d-flex justify-content-between align-items-center">
+			  <!-- Avatar -->
+			  <div class="d-flex align-items-center">
+				<div class="avatar avatar-sm">
+				  <img class="avatar-img rounded-1" src="images/10.jpg" alt="avatar">
+				</div>
+				<p class="mb-0 ms-2"><a href="#" class="h6 fw-light mb-0">Larry Lawson</a></p>
+			  </div>
+			  <!-- Price -->
+			  <div>
+				<h4 class="text-success mb-0 item-show">${course.courseCurrentPrice}</h4>
+				<a href="#" class="btn btn-sm btn-success-soft item-show-hover"><i class="fas fa-shopping-cart me-2"></i>Add to cart</a>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  `;
+	}
+  
+	// Function to update the trending courses content
+	function updateTrendingCourses() {
+	  // Clear the container
+	  trendingCoursesContainer.innerHTML = '';
+  
+	  // Generate HTML for each course and append to the container
+	  courses.forEach(function(course) {
+		const courseHTML = generateCourseHTML(course);
+		const courseElement = document.createElement('div');
+		courseElement.innerHTML = courseHTML;
+		trendingCoursesContainer.appendChild(courseElement);
+  
+		// Add click event listener to the heart icon
+		const heartIcon = courseElement.querySelector('.far.fa-heart');
+		heartIcon.addEventListener('click', function() {
+		  // Add the selected course to the trending courses array
+		  courses.push(course);
+  
+		  // Update the trending courses content
+		  updateTrendingCourses();
+		});
+	  });
+	}
+  
+	// Initial update of trending courses
+	updateTrendingCourses();
+  });
+  
 
 
+//   Add to Cart function
 
 
