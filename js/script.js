@@ -57,6 +57,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Dark Mode end Here
 
+
 // Courses Rendering on index page and filter according to category
 
 function filterCourses(category) {
@@ -122,82 +123,111 @@ function filterCourses(category) {
 };
 
 
-// Initialize cart count from local storage or default to 0
-var cart = JSON.parse(localStorage.getItem("cart")) || [];
-var cartCount = cart.length;
+// // Initialize cart count from local storage or default to 0
+var cartCount = parseInt(localStorage.getItem("cartCount")) || 0;
 var cartCountElement = document.getElementById("cartCount");
 cartCountElement.textContent = cartCount;
 
-    // Add the course to the cart
-    function addToCart(courseId) {
-		var course = courses.find(function(course) {
-		  return course.id === courseId;
-		});
+// Add the course to the cart
+function addToCart(courseId) {
+  var course = courses.find(function(course) {
+    return course.id === courseId;
+  });
+
+  if (course) {
+    // Perform the necessary actions to add the course to the cart
+    var cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push(course);
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    cartCount++;
+    cartCountElement.textContent = cartCount;
+    localStorage.setItem("cartCount", cartCount); 
+
+    // Update the cart display
+    var cartList = document.getElementById("cart-list");
+    var cartItemHTML = `
+      <div class="row p-3 g-2 cart-item" data-course-id="${course.id}">
+        <div class="col-3">
+          <img class="rounded-2 product-image" src="${course.courseImage}" alt="avatar">
+        </div>
+        <div class="col-9">
+          <div class="d-flex justify-content-between">
+            <h6 class="m-0">${course.courseTitle}</h6>
+            <a class="remove-btn small text-primary-hover" onclick="removeFromCart(event, '${course.id}')"><i class="bi bi-x-lg"></i></a>
+          </div>
+          <div>
+            <h4 class="text-success pt-2 fs-5 mb-0 item-show">${"$" + course.courseCurrentPrice}</h4>
+          </div>
+        </div>
+      </div>
+    `;
+    cartList.insertAdjacentHTML("beforeend", cartItemHTML);
+  }
+}
+
+// Retrieve cart items from localStorage and display them in the cart-list div
+var cart = JSON.parse(localStorage.getItem("cart")) || [];
+var cartList = document.getElementById("cart-list");
+
+function displayCartItems() {
+  // Clear the existing cart items
+  cartList.innerHTML = "";
+
+  // Iterate over the cart items and generate HTML for each item
+  cart.forEach(function(course) {
+    var cartItemHTML = `
+      <div class="row p-3 g-2 cart-item" data-course-id="${course.id}">
+        <div class="col-3">
+          <img class="rounded-2 product-image" src="${course.courseImage}" alt="avatar">
+        </div>
+        <div class="col-9">
+          <div class="d-flex justify-content-between">
+            <h6 class="m-0">${course.courseTitle}</h6>
+            <a class="remove-btn small text-primary-hover" onclick="removeFromCart(event, '${course.id}')"><i class="bi bi-x-lg"></i></a>
+          </div>
+          <div>
+            <h4 class="text-success pt-2 fs-5 mb-0 item-show">${"$" + course.courseCurrentPrice}</h4>
+          </div>
+        </div>
+      </div>
+    `;
+    cartList.insertAdjacentHTML("beforeend", cartItemHTML);
+  });
+}
+
+// Initial display of cart items
+displayCartItems();
+
+// Remove the course from the cart
+function removeFromCart(event, courseId) {
+  event.preventDefault();
+
+  // Remove the course from the cart array
+  var updatedCart = cart.filter(function(course) {
+    return course.id !== courseId;
+  });
+
+  // Update the cart in local storage
+  localStorage.setItem("cart", JSON.stringify(updatedCart));
+
+  // Update the cart count
+  cartCount = updatedCart.length;
+  cartCountElement.textContent = cartCount;
+
+  // Remove the cart item from the display
+  var cartItem = event.target.closest(".cart-item");
+  cartItem.remove();
+
+  // Update the cart variable with the updated cart
+  cart = updatedCart;
+};
+
+
   
-		if (course) {
-		  // Perform the necessary actions to add the course to the cart
-		  var cart = JSON.parse(localStorage.getItem("cart")) || [];
-		  cart.push(course);
-		  localStorage.setItem("cart", JSON.stringify(cart));
 
 
-		  cartCount++;
-		  cartCountElement.textContent = cartCount;
-		  localStorage.setItem("cartCount", cartCount); 
-  
-		  // Update the cart display
-		  var cartList = document.getElementById("cart-list");
-		  var cartItemHTML = `
-		  <div class="row p-3 g-2" id="cartItems"> 
-		  <div class="col-3">
-			  <img class="rounded-2 product-image" src="${course.courseImage}" alt="avatar">
-		  </div>
-
-		  <div class="col-9">
-			  <div class="d-flex justify-content-between">
-				  <h6 class="m-0">${course.courseTitle}</h6>
-				  <a class=" remove-btn small text-primary-hover" onclick="removeFromCart(event, ${course.id})"><i class="bi bi-x-lg"></i></a>
-				  </div>
-				  <div>
-				  <h4 class="text-success pt-2 fs-5 mb-0 item-show">${"$" + course.courseCurrentPrice}</h4>
-				  </div>
-		  </div>
-	  </div> 
-		  `;
-		  cartList.innerHTML += cartItemHTML;
-		}
-	  }
-  
-  
-	  // Retrieve cart items from localStorage and display them in the cart-list div
-	  var cart = JSON.parse(localStorage.getItem("cart")) || [];
-	  var cartList = document.getElementById("cart-list");
-  
-	  cart.forEach(function(course) {
-		var cartItemHTML = `
-		<div class="row p-3 g-2" id="cartItems"> 
-		<div class="col-3">
-			<img class="rounded-2 product-image" src="${course.courseImage}" alt="avatar">
-		</div>
-
-		<div class="col-9">
-			<div class="d-flex justify-content-between">
-				<h6 class="m-0">${course.courseTitle}</h6>
-				<a class=" remove-btn small text-primary-hover" onclick="removeFromCart(event, ${course.id})"><i class="bi bi-x-lg"></i></a>
-
-				</div>
-				<div>
-				<h4 class="text-success pt-2 fs-5 mb-0 item-show">${"$" + course.courseCurrentPrice}</h4>
-				</div>
-
-			
-		</div>
-	</div> 
-		`;
-		cartList.innerHTML += cartItemHTML;
-	  });
-
-
+//   Add to cart function end here
 
 		
 
@@ -207,29 +237,7 @@ cartCountElement.textContent = cartCount;
 
 
 
-	 // Remove the course from the cart
-	 function removeFromCart(event, courseId) {
-		event.preventDefault();
-  
-		// Remove the course from the cart
-		cart = cart.filter(function(course) {
-		  return course.id !== courseId;
-		});
-  
-		// Update the cart in local storage
-		localStorage.setItem("cart", JSON.stringify(cart));
-  
-		// Update the cart count
-		cartCount = cart.length;
-		cartCountElement.textContent = cartCount;
-  
-		// Remove the cart item from the display
-		var cartItem = event.target.closest("#cartItems");
-		cartItem.remove();
-	  }
-
-	//   Add to cart function end here
-
+	
 function updateHeartIconState() {
 	const heartIcons = document.getElementsByClassName('heart-icon');
   
@@ -321,8 +329,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 //   Heart function end here
+ 
+
   
-	
 
 
 //   Course detail function start here
@@ -413,69 +422,20 @@ function fetchCourseDetails() {
 											  <div class="tab-pane fade show active" id="course-pills-1" role="tabpanel" aria-labelledby="course-pills-tab-1">
 												  <!-- Course detail START -->
 												  <h5 class="mb-3">Course Description</h5>
-												  <p class="mb-3">
-													  Welcome to the <strong>Digital Marketing Ultimate Course Bundle - 12 Courses in 1 (Over 36 hours of content)</strong>
+												  <p class="mb-3"> ${course.courseHeading}												  </p>
+												  <p class="mb-3"> ${course.courseDetail}
 												  </p>
 												  <p class="mb-3">
-													  In this practical hands-on training, you’re going to learn to become a digital marketing expert with this <strong>ultimate course bundle that includes 12 digital marketing courses in 1!</strong>
 												  </p>
-												  <p class="mb-3">
-													  If you wish to find out the skills that should be covered in a basic digital marketing course syllabus in India or anywhere around the world, then reading this blog will help. Before we delve into the advanced 
-													  <strong>
-														  <a href="#" class="text-reset text-decoration-underline">digital marketing course</a>
-													  </strong>
-													  syllabus, let’s look at the scope of digital marketing and what the future holds.
-												  </p>
-												  <p class="mb-0">We focus a great deal on the understanding of behavioral psychology and influence triggers which are crucial for becoming a well rounded Digital Marketer. We understand that theory is important to build a solid foundation, we understand that theory alone isn’t going to get the job done so that’s why this course is packed with practical hands-on examples that you can follow step by step.</p>
+												  <p class="mb-0"></p>
 												  <!-- List content -->
 												  <h5 class="mt-4">What you’ll learn</h5>
-												  <ul class="list-group list-group-borderless mb-3">
-													  <li class="list-group-item h6 fw-light d-flex mb-0">
-														  <i class="fas fa-check-circle text-success me-2"></i>
-														  Digital marketing course introduction
-													  </li>
-													  <li class="list-group-item h6 fw-light d-flex mb-0">
-														  <i class="fas fa-check-circle text-success me-2"></i>
-														  Customer Life cycle
-													  </li>
-													  <li class="list-group-item h6 fw-light d-flex mb-0">
-														  <i class="fas fa-check-circle text-success me-2"></i>
-														  What is Search engine optimization(SEO)
-													  </li>
-													  <li class="list-group-item h6 fw-light d-flex mb-0">
-														  <i class="fas fa-check-circle text-success me-2"></i>
-														  Facebook ADS
-													  </li>
-													  <li class="list-group-item h6 fw-light d-flex mb-0">
-														  <i class="fas fa-check-circle text-success me-2"></i>
-														  Facebook Messenger Chatbot
-													  </li>
-													  <li class="list-group-item h6 fw-light d-flex mb-0">
-														  <i class="fas fa-check-circle text-success me-2"></i>
-														  Search engine optimization tools
-													  </li>
-													  <li class="list-group-item h6 fw-light d-flex mb-0">
-														  <i class="fas fa-check-circle text-success me-2"></i>
-														  Why SEO
-													  </li>
-													  <li class="list-group-item h6 fw-light d-flex mb-0">
-														  <i class="fas fa-check-circle text-success me-2"></i>
-														  URL Structure
-													  </li>
-													  <li class="list-group-item h6 fw-light d-flex mb-0">
-														  <i class="fas fa-check-circle text-success me-2"></i>
-														  Featured Snippet
-													  </li>
-													  <li class="list-group-item h6 fw-light d-flex mb-0">
-														  <i class="fas fa-check-circle text-success me-2"></i>
-														  SEO tips and tricks
-													  </li>
-													  <li class="list-group-item h6 fw-light d-flex mb-0">
-														  <i class="fas fa-check-circle text-success me-2"></i>
-														  Google tag manager
-													  </li>
+												  <ul class="list-group list-group-borderless mb-3" id="courseBenefits">
+
+												  
+												  
 												  </ul>
-												  <p class="mb-0">As it so contrasted oh estimating instrument. Size like body someone had. Are conduct viewing boy minutes warrant the expense? Tolerably behavior may admit daughters offending her ask own. Praise effect wishes change way and any wanted. Lively use looked latter regard had. Do he it part more last in. </p>
+												  <p class="mb-0">${course.courseHighlights}</p>
 												  <!-- Course detail END -->
 											  </div>
 											  <!-- Content END -->
@@ -1838,7 +1798,7 @@ function fetchCourseDetails() {
 												  <!-- Buttons -->
 												  <div class="mt-3 d-sm-flex justify-content-sm-between">
 													  <a href="#" class="btn btn-outline-primary mb-0">Free trial</a>
-													  <a href="#" class="btn btn-success mb-0">Buy course</a>
+													  <a href="checkout.html " class="btn btn-success mb-0" data-course-id="${course.id}" onclick="addToCart(${course.id})">Buy course</a>
 												  </div>
 											  </div>
 										  </div>
@@ -1853,42 +1813,30 @@ function fetchCourseDetails() {
 														  <i class="fas fa-fw fa-book-open text-primary"></i>
 														  Lectures
 													  </span>
-													  <span>30</span>
+													  <span>${course.courseTotalLectures}</span>
 												  </li>
 												  <li class="list-group-item d-flex justify-content-between align-items-center">
 													  <span class="h6 fw-light mb-0">
 														  <i class="fas fa-fw fa-clock text-primary"></i>
 														  Duration
 													  </span>
-													  <span>4h 50m</span>
+													  <span>${course.courseTotalHours + "h"} ${course.courseTotalMin + "m"}</span>
 												  </li>
 												  <li class="list-group-item d-flex justify-content-between align-items-center">
 													  <span class="h6 fw-light mb-0">
 														  <i class="fas fa-fw fa-signal text-primary"></i>
 														  Skills
 													  </span>
-													  <span>Beginner</span>
+													  <span>${course.courseLevel}</span>
 												  </li>
-												  <li class="list-group-item d-flex justify-content-between align-items-center">
-													  <span class="h6 fw-light mb-0">
-														  <i class="fas fa-fw fa-globe text-primary"></i>
-														  Language
-													  </span>
-													  <span>English</span>
-												  </li>
-												  <li class="list-group-item d-flex justify-content-between align-items-center">
-													  <span class="h6 fw-light mb-0">
-														  <i class="fas fa-fw fa-user-clock text-primary"></i>
-														  Deadline
-													  </span>
-													  <span>Nov 30 2021</span>
-												  </li>
+												  
+												  
 												  <li class="list-group-item d-flex justify-content-between align-items-center">
 													  <span class="h6 fw-light mb-0">
 														  <i class="fas fa-fw fa-medal text-primary"></i>
 														  Certificate
 													  </span>
-													  <span>Yes</span>
+													  <span>${course.courseCertificate}</span>
 												  </li>
 											  </ul>
 										  </div>
@@ -1903,7 +1851,7 @@ function fetchCourseDetails() {
 											  <div class="row gx-3 mb-3">
 												  <!-- Image -->
 												  <div class="col-4">
-													  <img class="rounded" src="images/21.jpg" alt="">
+													  <img class="rounded" src="images/12.jpg" alt="">
 												  </div>
 												  <!-- Info -->
 												  <div class="col-8">
@@ -1925,7 +1873,7 @@ function fetchCourseDetails() {
 											  <div class="row gx-3">
 												  <!-- Image -->
 												  <div class="col-4">
-													  <img class="rounded" src="images/18.jpg" alt="">
+													  <img class="rounded" src="images/12.jpg" alt="">
 												  </div>
 												  <!-- Info -->
 												  <div class="col-8">
@@ -1946,35 +1894,36 @@ function fetchCourseDetails() {
 										  </div>
 										  <!-- Recently Viewed END -->
 										  <!-- Tags START -->
-										  <div class="card card-body shadow p-4">
-											  <h4 class="mb-3">Popular Tags</h4>
-											  <ul class="list-inline mb-0">
-												  <li class="list-inline-item">
-													  <a class="btn btn-outline-light btn-sm" href="#">blog</a>
-												  </li>
-												  <li class="list-inline-item">
-													  <a class="btn btn-outline-light btn-sm" href="#">business</a>
-												  </li>
-												  <li class="list-inline-item">
-													  <a class="btn btn-outline-light btn-sm" href="#">theme</a>
-												  </li>
-												  <li class="list-inline-item">
-													  <a class="btn btn-outline-light btn-sm" href="#">bootstrap</a>
-												  </li>
-												  <li class="list-inline-item">
-													  <a class="btn btn-outline-light btn-sm" href="#">data science</a>
-												  </li>
-												  <li class="list-inline-item">
-													  <a class="btn btn-outline-light btn-sm" href="#">web development</a>
-												  </li>
-												  <li class="list-inline-item">
-													  <a class="btn btn-outline-light btn-sm" href="#">tips</a>
-												  </li>
-												  <li class="list-inline-item">
-													  <a class="btn btn-outline-light btn-sm" href="#">machine learning</a>
-												  </li>
-											  </ul>
-										  </div>
+										  <!-- <div class="card card-body shadow p-4">
+	<h4 class="mb-3">Popular Tags</h4>
+	<ul class="list-inline mb-0">
+		<li class="list-inline-item">
+			<a class="btn btn-outline-light btn-sm" href="#">blog</a>
+		</li>
+		<li class="list-inline-item">
+			<a class="btn btn-outline-light btn-sm" href="#">business</a>
+		</li>
+		<li class="list-inline-item">
+			<a class="btn btn-outline-light btn-sm" href="#">theme</a>
+		</li>
+		<li class="list-inline-item">
+			<a class="btn btn-outline-light btn-sm" href="#">bootstrap</a>
+		</li>
+		<li class="list-inline-item">
+			<a class="btn btn-outline-light btn-sm" href="#">data science</a>
+		</li>
+		<li class="list-inline-item">
+			<a class="btn btn-outline-light btn-sm" href="#">web development</a>
+		</li>
+		<li class="list-inline-item">
+			<a class="btn btn-outline-light btn-sm" href="#">tips</a>
+		</li>
+		<li class="list-inline-item">
+			<a class="btn btn-outline-light btn-sm" href="#">machine learning</a>
+		</li>
+	</ul>
+</div> -->
+
 										  <!-- Tags END -->
 									  </div>
 								  </div>
@@ -1996,6 +1945,22 @@ if (window.location.pathname === "/course-detail.html") {
 } else {
     filterCourses(category)
 };
+
+// Generate HTML for course benefits
+var courseBenefitsHTML = Object.values(courses[0].courseBenefits[0]).map(function(benefit) {
+	return `
+	  <li class="list-group-item h6 fw-light d-flex mb-0">
+		<i class="fas fa-check-circle text-success me-2"></i>
+		${benefit}
+	  </li>
+	`;
+  }).join("");
+  
+  // Insert course benefits HTML into the desired element on the page
+  var courseBenefitsContainer = document.getElementById("courseBenefits");
+  courseBenefitsContainer.innerHTML = courseBenefitsHTML;
+
+//   End Here
 
 
 function generateRatingStars(rating) {
@@ -2128,6 +2093,29 @@ document.addEventListener("DOMContentLoaded", function() {
   
 
 
-//   Add to Cart function
+// //   Add to Cart function
+
+//  // Remove the course from the cart
+//  function removeFromCart(event, courseId) {
+// 	event.preventDefault();
+
+// 	// Remove the course from the cart
+// 	cart = cart.filter(function(course) {
+// 	  return course.id !== courseId;
+// 	});
+
+// 	// Update the cart in local storage
+// 	localStorage.setItem("cart", JSON.stringify(cart));
+
+// 	// Update the cart count
+// 	cartCount = cart.length;
+// 	cartCountElement.textContent = cartCount;
+
+// 	// Remove the cart item from the display
+// 	var cartItem = event.target.closest("#cartItems");
+// 	cartItem.remove();
+//   }
+
+// //   Add to cart function end here
 
 

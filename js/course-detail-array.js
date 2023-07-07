@@ -1,20 +1,44 @@
 
 // Array of Courses
-let courses = [
-	{
-        id: 1,
-        courseImage: "../images/08.jpg",
-        courseTitle: "Web Design",
-        courseDescription: "Proposal indulged no do sociable he throwing settling.",
-        courseRating: 4.5,
-        courseCurrentPrice: 300,
-        courseOldPrice: 250,
-        courseCategory: "Web Design",
-        courseTotalLectures: 15,
-        courseTotalHours: 12,
-        courseTotalMin: 54,
-        courseLevel: "Beginner",
-        courseTotalStrength: 5000,
+var courses = [
+    {
+      id: 1,
+      courseImage: "../images/08.jpg",
+      courseTitle: "Web Design",
+      courseDescription: "Proposal indulged no do sociable he throwing settling.",
+      courseHeading : [
+         "Welcome to the Web Design Mastery Course Bundle - 12 Courses in 1 (Over 50 hours of content)",
+        ],
+    courseDetail: [
+      "In this comprehensive and practical hands-on training, you will become a web design expert with this ultimate course bundle that includes 12 web design courses in 1!",
+      "Whether you're a beginner looking to start a career in web design or an experienced designer wanting to expand your skill set, this course bundle covers everything you need to know to create stunning and user-friendly websites."
+    ],
+    courseHighlights: "Gain a deep understanding of web design principles Learn wireframing, prototyping, and responsive design Master color theory and create visually captivating websites Gain a deep understanding of web design principles Learn wireframing, prototyping, and responsive design Master color theory and create visually captivating websites",
+    courseBenefits : [
+        {
+            1: "Practical examples and exercises to reinforce learning",
+            2: "Practical examples and exercises to reinforce ",
+            3: "Practical examples and exercises to ",
+            4: "Practical examples and exercises to reinforce learning",
+            5: "Practical examples and exercises to reinforce learning",
+            6: "Practical examples and exercises to reinforce learning",
+            7: "Practical examples and exercises to reinforce learning",
+            8: "Practical examples and exercises to reinforce learning",
+
+        },
+    ],
+        
+      
+      courseRating: 4.5,
+      courseCurrentPrice: 0,
+      courseOldPrice: 250,
+      courseCategory: "Web Design",
+      courseTotalLectures: 15,
+      courseTotalHours: 12,
+      courseTotalMin: 54,
+      courseLevel: "Beginner",
+      courseTotalStrength: 5000,
+      courseCertificate: "Yes"
     }
 
     ,
@@ -719,3 +743,4 @@ let courses = [
     ,
 
 ];
+
