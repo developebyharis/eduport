@@ -29,7 +29,7 @@ var courses = [
     ],
         
       
-      courseRating: 4.5,
+      courseRating: 5,
       courseCurrentPrice: 0,
       courseOldPrice: 250,
       courseCategory: "Web Design",
@@ -741,6 +741,21 @@ var courses = [
     }
 
     ,
+    {
+        id: 41,
+        courseImage: "../images/08.jpg",
+        courseTitle: "Legal",
+        courseDescription: "Proposal indulged no do sociable he throwing settling.",
+        courseRating: 4.5,
+        courseCurrentPrice: 300,
+        courseOldPrice: 250,
+        courseCategory: "Legal",
+        courseTotalLectures: 15,
+        courseTotalHours: 12,
+        courseTotalMin: 54,
+        courseLevel: "Beginner",
+        courseTotalStrength: 5000,
+    },
 
 ];
 
