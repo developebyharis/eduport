@@ -73,7 +73,7 @@ function filterCourses(category) {
 			  <div class="card shadow h-100 ">
 			  <div class="card action-trigger-hover bg-transparent">
 				<a class="course-link" href="course-detail.html" >
-				  <img src="${course.courseImage}" class="card-img-top" alt="${course.courseCategory}">
+				  <img src="${course.courseImage}" class="card-img-top" alt="${course.courseTitle}">
 				</a>
 				<div class="card-body pb-0">
 				  <div class="d-flex justify-content-between mb-2">
@@ -321,20 +321,13 @@ document.addEventListener("DOMContentLoaded", function() {
   });
   
 // end here
-
 //    Course list end here
-
-
-
-
-
 //   Heart function end here
- 
-
-  
-
-
 //   Course detail function start here
+
+
+// Course Detail fetching start here
+
 function fetchCourseDetails() {
     const urlParams = new URLSearchParams(window.location.search);
     const courseId = urlParams.get("id");
@@ -1996,126 +1989,126 @@ function generateRatingStars(rating) {
 //   End Here
 
 
-document.addEventListener("DOMContentLoaded", function() {
-	// Get the element where you want to display the HTML content
-	const trendingCoursesContainer = document.getElementById('trendingCourses');
+// document.addEventListener("DOMContentLoaded", function() {
+// 	// Get the element where you want to display the HTML content
+// 	const trendingCoursesContainer = document.getElementById('trendingCourses');
   
-	// Initialize the trending courses array
-	let trendingCourses = [];
+// 	// Initialize the trending courses array
+// 	let trendingCourses = [];
   
-	// Function to generate HTML for a single course
-	function generateCourseHTML(course) {
-	  return `
-		<div class="card action-trigger-hover border bg-transparent">
-		  <!-- Image -->
-		  <img src="${course.courseImage}" class="card-img-top" alt="course image">
-		  <!-- Ribbon -->
-		  <div class="ribbon mt-3"><span>Free</span></div>
-		  <!-- Card body -->
-		  <div class="card-body pb-0">
-			<!-- Badge and favorite -->
-			<div class="d-flex justify-content-between mb-3">
-			  <span class="hstack gap-2">
-				<a href="#" class="badge bg-primary bg-opacity-10 text-primary">${course.courseCategory}</a>
-				<a href="#" class="badge text-bg-dark">${course.courseLevel}</a>
-			  </span>
-			  <a href="#" class="h6 fw-light mb-0"><i class="far fa-bookmark"></i></a>
-			</div>
-			<!-- Title / -->
-			<h5 class="card-title"><a href="#">${course.courseTitle}</a></h5>
-			<!-- Rating -->
-			<div class="d-flex justify-content-between mb-2">
-			  <div class="hstack gap-2">
-				<p class="text-warning m-0">${course.courseRating}<i class="fas fa-star text-warning ms-1"></i></p>
-				<span class="small">(${course.courseTotalStrength})</span>
-			  </div>
-			  <div class="hstack gap-2">
-				<p class="h6 fw-light mb-0 m-0">${course.courseTotalStrength}</p>
-				<span class="small">(Student)</span>
-			  </div>
-			</div>
-			<!-- Time -->
-			<div class="hstack gap-3">
-			  <span class="h6 fw-light mb-0"><i class="far fa-clock text-danger me-2"></i>${course.courseTotalHours}h ${course.courseTotalMin}m</span>
-			  <span class="h6 fw-light mb-0"><i class="fas fa-table text-orange me-2"></i>${course.courseTotalLectures} lectures</span>
-			</div>
-		  </div>
-		  <!-- Card footer -->
-		  <div class="card-footer pt-0 bg-transparent">
-			<hr>
-			<!-- Avatar and Price -->
-			<div class="d-flex justify-content-between align-items-center">
-			  <!-- Avatar -->
-			  <div class="d-flex align-items-center">
-				<div class="avatar avatar-sm">
-				  <img class="avatar-img rounded-1" src="images/10.jpg" alt="avatar">
-				</div>
-				<p class="mb-0 ms-2"><a href="#" class="h6 fw-light mb-0">Larry Lawson</a></p>
-			  </div>
-			  <!-- Price -->
-			  <div>
-				<h4 class="text-success mb-0 item-show">${course.courseCurrentPrice}</h4>
-				<a href="#" class="btn btn-sm btn-success-soft item-show-hover"><i class="fas fa-shopping-cart me-2"></i>Add to cart</a>
-			  </div>
-			</div>
-		  </div>
-		</div>
-	  `;
-	}
+// 	// Function to generate HTML for a single course
+// 	function generateCourseHTML(course) {
+// 	  return `
+// 		<div class="card action-trigger-hover border bg-transparent">
+// 		  <!-- Image -->
+// 		  <img src="${course.courseImage}" class="card-img-top" alt="course image">
+// 		  <!-- Ribbon -->
+// 		  <div class="ribbon mt-3"><span>Free</span></div>
+// 		  <!-- Card body -->
+// 		  <div class="card-body pb-0">
+// 			<!-- Badge and favorite -->
+// 			<div class="d-flex justify-content-between mb-3">
+// 			  <span class="hstack gap-2">
+// 				<a href="#" class="badge bg-primary bg-opacity-10 text-primary">${course.courseCategory}</a>
+// 				<a href="#" class="badge text-bg-dark">${course.courseLevel}</a>
+// 			  </span>
+// 			  <a href="#" class="h6 fw-light mb-0"><i class="far fa-bookmark"></i></a>
+// 			</div>
+// 			<!-- Title / -->
+// 			<h5 class="card-title"><a href="#">${course.courseTitle}</a></h5>
+// 			<!-- Rating -->
+// 			<div class="d-flex justify-content-between mb-2">
+// 			  <div class="hstack gap-2">
+// 				<p class="text-warning m-0">${course.courseRating}<i class="fas fa-star text-warning ms-1"></i></p>
+// 				<span class="small">(${course.courseTotalStrength})</span>
+// 			  </div>
+// 			  <div class="hstack gap-2">
+// 				<p class="h6 fw-light mb-0 m-0">${course.courseTotalStrength}</p>
+// 				<span class="small">(Student)</span>
+// 			  </div>
+// 			</div>
+// 			<!-- Time -->
+// 			<div class="hstack gap-3">
+// 			  <span class="h6 fw-light mb-0"><i class="far fa-clock text-danger me-2"></i>${course.courseTotalHours}h ${course.courseTotalMin}m</span>
+// 			  <span class="h6 fw-light mb-0"><i class="fas fa-table text-orange me-2"></i>${course.courseTotalLectures} lectures</span>
+// 			</div>
+// 		  </div>
+// 		  <!-- Card footer -->
+// 		  <div class="card-footer pt-0 bg-transparent">
+// 			<hr>
+// 			<!-- Avatar and Price -->
+// 			<div class="d-flex justify-content-between align-items-center">
+// 			  <!-- Avatar -->
+// 			  <div class="d-flex align-items-center">
+// 				<div class="avatar avatar-sm">
+// 				  <img class="avatar-img rounded-1" src="images/10.jpg" alt="avatar">
+// 				</div>
+// 				<p class="mb-0 ms-2"><a href="#" class="h6 fw-light mb-0">Larry Lawson</a></p>
+// 			  </div>
+// 			  <!-- Price -->
+// 			  <div>
+// 				<h4 class="text-success mb-0 item-show">${course.courseCurrentPrice}</h4>
+// 				<a href="#" class="btn btn-sm btn-success-soft item-show-hover"><i class="fas fa-shopping-cart me-2"></i>Add to cart</a>
+// 			  </div>
+// 			</div>
+// 		  </div>
+// 		</div>
+// 	  `;
+// 	}
   
-	// Function to update the trending courses content
-	function updateTrendingCourses() {
-	  // Clear the container
-	  trendingCoursesContainer.innerHTML = '';
+// 	// Function to update the trending courses content
+// 	function updateTrendingCourses() {
+// 	  // Clear the container
+// 	  trendingCoursesContainer.innerHTML = '';
   
-	  // Generate HTML for each course and append to the container
-	  courses.forEach(function(course) {
-		const courseHTML = generateCourseHTML(course);
-		const courseElement = document.createElement('div');
-		courseElement.innerHTML = courseHTML;
-		trendingCoursesContainer.appendChild(courseElement);
+// 	  // Generate HTML for each course and append to the container
+// 	  courses.forEach(function(course) {
+// 		const courseHTML = generateCourseHTML(course);
+// 		const courseElement = document.createElement('div');
+// 		courseElement.innerHTML = courseHTML;
+// 		trendingCoursesContainer.appendChild(courseElement);
   
-		// Add click event listener to the heart icon
-		const heartIcon = courseElement.querySelector('.far.fa-heart');
-		heartIcon.addEventListener('click', function() {
-		  // Add the selected course to the trending courses array
-		  courses.push(course);
+// 		// Add click event listener to the heart icon
+// 		const heartIcon = courseElement.querySelector('.far.fa-heart');
+// 		heartIcon.addEventListener('click', function() {
+// 		  // Add the selected course to the trending courses array
+// 		  courses.push(course);
   
-		  // Update the trending courses content
-		  updateTrendingCourses();
-		});
-	  });
-	}
+// 		  // Update the trending courses content
+// 		  updateTrendingCourses();
+// 		});
+// 	  });
+// 	}
   
-	// Initial update of trending courses
-	updateTrendingCourses();
-  });
+// 	// Initial update of trending courses
+// 	updateTrendingCourses();
+//   });
   
 
 
 // //   Add to Cart function
 
 //  // Remove the course from the cart
-//  function removeFromCart(event, courseId) {
-// 	event.preventDefault();
+ function removeFromCart(event, courseId) {
+	event.preventDefault();
 
-// 	// Remove the course from the cart
-// 	cart = cart.filter(function(course) {
-// 	  return course.id !== courseId;
-// 	});
+	// Remove the course from the cart
+	cart = cart.filter(function(course) {
+	  return course.id !== courseId;
+	});
 
-// 	// Update the cart in local storage
-// 	localStorage.setItem("cart", JSON.stringify(cart));
+	// Update the cart in local storage
+	localStorage.setItem("cart", JSON.stringify(cart));
 
-// 	// Update the cart count
-// 	cartCount = cart.length;
-// 	cartCountElement.textContent = cartCount;
+	// Update the cart count
+	cartCount = cart.length;
+	cartCountElement.textContent = cartCount;
 
-// 	// Remove the cart item from the display
-// 	var cartItem = event.target.closest("#cartItems");
-// 	cartItem.remove();
-//   }
+	// Remove the cart item from the display
+	var cartItem = event.target.closest("#cartItems");
+	cartItem.remove();
+  }
 
-// //   Add to cart function end here
+//   Add to cart function end here
 
 
