@@ -9,18 +9,25 @@ function generateCourseCard(course) {
     <div class="col-sm-6 col-xl-4 course" data-course-id="${course.id}">
       <div class="card shadow h-100">
         <!-- Image -->
+        <a class="course-link" href="course-detail.html?id=${course.id}">
         <img src="${course.courseImage}" class="card-img-top" alt="${course.courseTitle}">
         <div class="card-body pb-0">
+        </a>
           <!-- Badge and favorite -->
           <div class="d-flex justify-content-between mb-2">
-            <a href="#" class="badge bg-success bg-opacity-10 text-success">${course.courseLevel}</a>
+
+            <a href="course-detail.html?id=${course.id}" class="badge bg-success bg-opacity-10 text-success">${course.courseLevel}</a>
             <i class="heart-icon far fa-heart" data-course-id="${course.id}"></i>
           </div>
           <!-- Title -->
           <h5 class="card-title">
-            <a href="#">${course.courseTitle}</a>
+         
+
+            <a class="course-link" href="course-detail.html?id=${course.id}">${course.courseTitle}</a>
           </h5>
-          <p class="mb-2 text-truncate-2">${course.courseDescription}</p>
+          <a class="course-link " href="course-detail.html?id=${course.id}">
+          <p class="mb-2 grid-txt">${course.courseDescription}</p>
+          </a>
           <!-- Rating star -->
           <ul class="list-inline mb-0">
             ${generateRatingStars(course.courseRating)}
