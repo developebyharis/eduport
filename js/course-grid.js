@@ -4,6 +4,7 @@ var filteredCourses = courses; // Initially, all courses are displayed
 var currentPage = 1;
 var coursesPerPage = 9;
 
+
 // Function to generate the course card HTML for a given course
 function generateCourseCard(course) {
   // Generate the HTML code for the course card
@@ -59,6 +60,7 @@ function generateCourseCard(course) {
 }
 
 
+
 // filter + Search function start here
 
 // Function to filter the courses based on category
@@ -101,17 +103,7 @@ searchButton.addEventListener('click', function () {
   filterCourses(selectedCategory, searchKeyword);
 });
 
-// Attach event listeners to the course category buttons
-var categoryButtons = document.querySelectorAll('.category-button');
-categoryButtons.forEach(function (button) {
-  button.addEventListener('click', function () {
-    var searchInput = document.getElementById('searchInput');
-    var searchKeyword = searchInput.value;
-    var category = button.dataset.category;
 
-    filterCourses(category, searchKeyword);
-  });
-});
 
 // Search End here
 

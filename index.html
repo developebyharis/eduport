@@ -320,16 +320,16 @@
                         <!-- Nav Search START -->
                         <div class="col-xl-7">
                             <div class="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center">
-                                <div class="nav-item w-100">
-                                    <form class="rounded position-relative">
-                                        <input class="form-control pe-5 bg-secondary bg-opacity-10 border-1" type="search" placeholder="Search" aria-label="Search">
-                                        <button class="btn btn-link bg-transparent px-2 py-0 position-absolute top-50 end-0 translate-middle-y" type="submit">
-                                            <i class="fas fa-search fs-6 text-primary"></i>
-                                        </button>
-                                    </form>
-                                </div>
+                              <div class="nav-item w-100">
+                                <form id="searchForm" class="rounded position-relative" action="course-grid.html">
+                                    <input id="searchInput" class="form-control pe-5 bg-secondary bg-opacity-10 border-1" type="search" name="search" placeholder="Search" aria-label="Search">
+                                    <button id="searchButton" class="btn btn-link bg-transparent px-2 py-0 position-absolute top-50 end-0 translate-middle-y" type="submit">
+                                      <i class="fas fa-search fs-6 text-primary"></i>
+                                    </button>
+                                  </form>
+                              </div>
                             </div>
-                        </div>
+                          </div>
                         <!-- Nav Search END -->
                         <!-- Nav Main menu START -->
                         <ul class="navbar-nav navbar-nav-scroll me-auto">
@@ -1494,7 +1494,7 @@ Footer END -->
         <script src="js/purecounter_vanilla.js"></script>
         <script src="js/functions.js"></script>
 		<script src="js/script.js"></script>
-        <script src="js/search.js"></script>
+        <!-- <script src="js/search.js"></script> -->
         <script src="js/cart.js"></script>
         <script src="js/checkout.js"></script>
         <script src="js/course-detail-array.js"></script>
