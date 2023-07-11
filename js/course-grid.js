@@ -58,7 +58,9 @@ function generateCourseCard(course) {
   return cardHTML;
 }
 
-// Function to filter the courses based on category
+
+// filter function start here
+
 // Function to filter the courses based on category
 function filterCourses(category) {
   if (category === 'all') {
@@ -82,18 +84,10 @@ function filterCourses(category) {
   updateCourseGridAndPagination();
 }
 
-
 // Function to update the course grid with filtered courses
   
   // Update the displayed courses
   updateCourseGrid();
-
-
-
-
-
-
-
 
 // Function to update the course grid with filtered courses
 function updateCourseGrid() {
@@ -117,8 +111,7 @@ function updateCourseGrid() {
   updateHeartIconState();
 
 }
-// Function to handle page navigation
-// Function to handle page navigation
+
 // Function to handle page navigation
 function goToPage(pageNumber) {
   if (pageNumber < 1 || pageNumber > Math.ceil(filteredCourses.length / coursesPerPage)) {
@@ -135,9 +128,6 @@ function goToPage(pageNumber) {
   updateCourseGridAndPagination();
 }
 
-
-
-// Function to generate pagination links
 // Function to generate pagination links
 function generatePaginationLinks() {
   // Calculate the total number of pages
@@ -164,9 +154,6 @@ function generatePaginationLinks() {
   return paginationHTML;
 }
 
-
-
-// Update the displayed courses and pagination links
 // Update the displayed courses and pagination links
 function updateCourseGridAndPagination() {
   // Restore the current page from local storage
@@ -175,10 +162,7 @@ function updateCourseGridAndPagination() {
     currentPage = parseInt(storedPage, 10);
   }
 
-
-
   updateCourseGrid();
-
 
   // Generate and update the pagination links
   var paginationLinksHTML = generatePaginationLinks();
@@ -187,15 +171,14 @@ function updateCourseGridAndPagination() {
   
 }
 
-
 // Initial course grid and pagination update
 updateCourseGridAndPagination();
 
+// End Here
 
 
 
-
-
+// Heart icon start here
 
 // Function to update heart icon states
 function updateHeartIconState() {
@@ -342,17 +325,20 @@ parentElement.innerHTML = `
           <!-- Rent -->
           <li class="list-inline-item">
               <input type="radio" class="btn-check" name="options" id="option1">
-              <label class="btn btn-light btn-primary-soft-check" for="option1">All</label>
+              <label class="btn btn-light btn-primary-soft-check" onclick="filterCoursesByPrice('all')
+              " for="option1">All</label>
           </li>
           <!-- Sale -->
           <li class="list-inline-item">
               <input type="radio" class="btn-check" name="options" id="option2">
-              <label class="btn btn-light btn-primary-soft-check" for="option2">Free</label>
+              <label class="btn btn-light btn-primary-soft-check" onclick="filterCoursesByPrice('free')
+              " for="option2">Free</label>
           </li>
           <!-- Buy -->
           <li class="list-inline-item">
               <input type="radio" class="btn-check" name="options" id="option3">
-              <label class="btn btn-light btn-primary-soft-check" for="option3">Paid</label>
+              <label class="btn btn-light btn-primary-soft-check" onclick="filterCoursesByPrice('paid')
+              " for="option3">Paid</label>
           </li>
       </ul>
   </div>
@@ -433,6 +419,45 @@ parentElement.innerHTML = `
 
 // Append the newDiv to the parent element
 parentElement.appendChild(parentElement);
+
+
+// Function to filter the courses based on price level
+function filterCoursesByPrice(priceLevel) {
+  if (priceLevel === 'all') {
+    // Show all courses
+    filteredCourses = courses;
+  } else if (priceLevel === 'free') {
+    // Filter courses by free price
+    filteredCourses = courses.filter(function (course) {
+      return course.coursePriceLevel === 'free';
+    });
+  } else if (priceLevel === 'paid') {
+    // Filter courses by paid price
+    filteredCourses = courses.filter(function (course) {
+      return course.coursePriceLevel === 'paid';
+    });
+  }
+
+  // Update the displayed courses
+  updateCourseGrid();
+}
+
+// Attach event listeners to the radio buttons
+var allRadioBtn = document.getElementById('option1');
+var freeRadioBtn = document.getElementById('option2');
+var paidRadioBtn = document.getElementById('paoption3');
+
+allRadioBtn.addEventListener('change', function () {
+  filterCoursesByPrice('all');
+});
+
+freeRadioBtn.addEventListener('change', function () {
+  filterCoursesByPrice('free');
+});
+
+paidRadioBtn.addEventListener('change', function () {
+  filterCoursesByPrice('paid');
+});
 
 
 /// Calculate the length of the "Finance" category
