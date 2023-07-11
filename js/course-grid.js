@@ -1,11 +1,8 @@
 var courseGridContainer = document.getElementById('courseGridContainer');
 var filteredCourses = courses; // Initially, all courses are displayed
-<<<<<<< HEAD
 // Global variables for pagination
 var currentPage = 1;
 var coursesPerPage = 12;
-=======
->>>>>>> origin/main
 
 // Function to generate the course card HTML for a given course
 function generateCourseCard(course) {
@@ -62,10 +59,7 @@ function generateCourseCard(course) {
 }
 
 // Function to filter the courses based on category
-<<<<<<< HEAD
 // Function to filter the courses based on category
-=======
->>>>>>> origin/main
 function filterCourses(category) {
   if (category === 'all') {
     // Show all courses
@@ -77,7 +71,6 @@ function filterCourses(category) {
     });
   }
 
-<<<<<<< HEAD
   // Reset the current page to 1
   currentPage = 1;
 
@@ -91,17 +84,15 @@ function filterCourses(category) {
 
 
 // Function to update the course grid with filtered courses
-=======
   
   // Update the displayed courses
   updateCourseGrid();
 
 
-}
 
 
 
->>>>>>> origin/main
+
 
 
 // Function to update the course grid with filtered courses
@@ -109,7 +100,6 @@ function updateCourseGrid() {
   // Clear the course grid
   courseGridContainer.innerHTML = '';
 
-<<<<<<< HEAD
    // Calculate the index of the first and last course for the current page
    var indexOfLastCourse = currentPage * coursesPerPage;
    var indexOfFirstCourse = indexOfLastCourse - coursesPerPage;
@@ -121,20 +111,12 @@ function updateCourseGrid() {
   coursesForCurrentPage.forEach(function (course) {
     var cardItem = generateCourseCard(course);
     courseGridContainer.innerHTML += cardItem;
-=======
-  // Generate the course cards for the filtered courses
-  filteredCourses.forEach(function (course) {
-    var cardItem = generateCourseCard(course);
-    courseGridContainer.innerHTML += cardItem;
-
->>>>>>> origin/main
   });
 
   // Update heart icon states
   updateHeartIconState();
 
 }
-<<<<<<< HEAD
 // Function to handle page navigation
 // Function to handle page navigation
 // Function to handle page navigation
@@ -213,11 +195,6 @@ updateCourseGridAndPagination();
 
 
 
-=======
-
-// Initial course grid update
-updateCourseGrid();
->>>>>>> origin/main
 
 
 // Function to update heart icon states
