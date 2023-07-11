@@ -2,7 +2,7 @@ var courseGridContainer = document.getElementById('courseGridContainer');
 var filteredCourses = courses; // Initially, all courses are displayed
 // Global variables for pagination
 var currentPage = 1;
-var coursesPerPage = 12;
+var coursesPerPage = 9;
 
 // Function to generate the course card HTML for a given course
 function generateCourseCard(course) {
@@ -59,10 +59,10 @@ function generateCourseCard(course) {
 }
 
 
-// filter function start here
+// filter + Search function start here
 
 // Function to filter the courses based on category
-function filterCourses(category) {
+function filterCourses(category, searchKeyword) {
   if (category === 'all') {
     // Show all courses
     filteredCourses = courses;
@@ -70,6 +70,13 @@ function filterCourses(category) {
     // Filter courses by category
     filteredCourses = courses.filter(function (course) {
       return course.courseCategory.toLowerCase() === category.toLowerCase();
+    });
+  }
+
+  // Filter courses by search keyword
+  if (searchKeyword) {
+    filteredCourses = filteredCourses.filter(function (course) {
+      return course.courseTitle.toLowerCase().includes(searchKeyword.toLowerCase()) || course.courseCategory.toLowerCase().includes(searchKeyword.toLowerCase());;
     });
   }
 
@@ -83,6 +90,30 @@ function filterCourses(category) {
   // Update the displayed courses and pagination links
   updateCourseGridAndPagination();
 }
+
+// Attach event listener to the search button
+var searchButton = document.getElementById('searchButton');
+searchButton.addEventListener('click', function () {
+  var searchInput = document.getElementById('searchInput');
+  var searchKeyword = searchInput.value;
+  var selectedCategory = localStorage.getItem('currentCategory') || 'all';
+
+  filterCourses(selectedCategory, searchKeyword);
+});
+
+// Attach event listeners to the course category buttons
+var categoryButtons = document.querySelectorAll('.category-button');
+categoryButtons.forEach(function (button) {
+  button.addEventListener('click', function () {
+    var searchInput = document.getElementById('searchInput');
+    var searchKeyword = searchInput.value;
+    var category = button.dataset.category;
+
+    filterCourses(category, searchKeyword);
+  });
+});
+
+// Search End here
 
 // Function to update the course grid with filtered courses
   
@@ -133,26 +164,35 @@ function generatePaginationLinks() {
   // Calculate the total number of pages
   var totalPages = Math.ceil(filteredCourses.length / coursesPerPage);
 
+  // Calculate the start and end page numbers to display
+  var startPage = Math.max(1, currentPage - 1);
+  var endPage = Math.min(startPage + 3, totalPages);
+
   // Generate the pagination links HTML
   var paginationHTML = '';
 
-  // Previous page link
-  if (currentPage > 1) {
-    paginationHTML += `<li class="page-item"><a class="page-link" onclick="goToPage(${currentPage - 1})"><i class="fas fa-angle-double-left"></i></a></li>`;
+  // Previous page link or dots
+  if (startPage > 1) {
+    paginationHTML += `<li class="page-item"><a class="page-link" onclick="goToPage(${startPage - 1})"><i class="fas fa-angle-double-left"></i></a></li>`;
+  } else {
+    paginationHTML += `<li class="page-item disabled"><span class="page-link">...</span></li>`;
   }
 
   // Page links
-  for (var i = 1; i <= totalPages; i++) {
+  for (var i = startPage; i <= endPage; i++) {
     paginationHTML += `<li class="page-item ${i === currentPage ? 'active' : ''}"><a class="page-link" onclick="goToPage(${i})">${i}</a></li>`;
   }
 
-  // Next page link
-  if (currentPage < totalPages) {
-    paginationHTML += `<li class="page-item"><a class="page-link" onclick="goToPage(${currentPage + 1})"><i class="fas fa-angle-double-right"></i></a></li>`;
+  // Next page link or dots
+  if (endPage < totalPages) {
+    paginationHTML += `<li class="page-item"><a class="page-link" onclick="goToPage(${endPage + 1})"><i class="fas fa-angle-double-right"></i></a></li>`;
+  } else {
+    paginationHTML += `<li class="page-item disabled"><span class="page-link">...</span></li>`;
   }
 
   return paginationHTML;
 }
+
 
 // Update the displayed courses and pagination links
 function updateCourseGridAndPagination() {
@@ -236,7 +276,7 @@ parentElement.innerHTML = `
       <div class="d-flex justify-content-between align-items-center filter-btn" onclick="filterCourses('Development')">
         <div class="form-check">
           <input class="form-check-input " type="checkbox" value="" name="category" id="flexCheckDefault10" onchange="handleCheckboxChange(event)" onclick="filterCourses('Development')">
-          <label class="form-check-label" for="flexCheckDefault10">Development</label>
+          <label class="form-check-label" for="flexCheckDefault10">Web Development</label>
         </div>
         <span class="small" id="courseCount">(0)</span>
         </div>
@@ -244,7 +284,7 @@ parentElement.innerHTML = `
       <div class="d-flex justify-content-between align-items-center filter-btn" onclick="filterCourses('Web Design')">
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" name="category" id="flexCheckDefault11" onchange="handleCheckboxChange(event)" onclick="filterCourses('Web Design')">
-          <label class="form-check-label" for="flexCheckDefault11">Design</label>
+          <label class="form-check-label" for="flexCheckDefault11">Web Design</label>
         </div>
         <span class="small" id="courseCount">(0)</span>
       </div>
@@ -273,13 +313,15 @@ parentElement.innerHTML = `
         <span class="small" id="courseCount">(0)</span>
       </div>
       <!-- Checkbox -->
-      <div class="d-flex justify-content-between align-items-center" onclick="filterCourses('Legal')">
+     
+      <!-- Checkbox -->
+      <div class="d-flex justify-content-between align-items-center" onclick="filterCourses('Graphic Design')">
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" name="category" name="category" id="flexCheckDefault14" onchange="handleCheckboxChange(event)" onclick="filterCourses('Legal')">
-          <label class="form-check-label" for="flexCheckDefault14">Legal</label>
+          <input class="form-check-input" type="checkbox" value="" name="category" id="flexCheckDefault15" onchange="handleCheckboxChange(event)" onclick="filterCourses('Graphic Design')">
+          <label class="form-check-label" for="flexCheckDefault15">Graphic Design</label>
         </div>
         <span class="small" id="courseCount">(0)</span>
-        </div>
+      </div>
       <!-- Checkbox -->
       <div class="d-flex justify-content-between align-items-center" onclick="filterCourses('Photography')">
         <div class="form-check">
@@ -292,13 +334,7 @@ parentElement.innerHTML = `
       <div class="collapse multi-collapse" id="multiCollapseExample1">
         <div class="card card-body p-0">
           <!-- Checkbox -->
-          <div class="d-flex justify-content-between align-items-center" onclick="filterCourses('Writing')">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" name="category" id="flexCheckDefault16" onchange="handleCheckboxChange(event)" onclick="filterCourses('Writing')"> 
-              <label class="form-check-label" for="flexCheckDefault16">Writing</label>
-            </div>
-            <span class="small" id="courseCount">(0)</span>
-            </div>
+          
           <!-- Checkbox -->
           <div class="d-flex justify-content-between align-items-center filter-btn" onclick="filterCourses('Marketing')">
             <div class="form-check">
@@ -350,70 +386,28 @@ parentElement.innerHTML = `
       <ul class="list-inline mb-0">
           <!-- Item -->
           <li class="list-inline-item mb-2">
-              <input type="checkbox" class="btn-check" id="btn-check-12">
-              <label class="btn btn-light btn-primary-soft-check" for="btn-check-12">All levels</label>
+              <input type="radio" class="btn-check" name="options" id="btn-check-12">
+              <label class="btn btn-light btn-primary-soft-check" onclick="filterCoursesBySkillLevel('All')" for="btn-check-12">All levels</label>
           </li>
           <!-- Item -->
           <li class="list-inline-item mb-2">
-              <input type="checkbox" class="btn-check" id="btn-check-9">
-              <label class="btn btn-light btn-primary-soft-check" for="btn-check-9">Beginner</label>
+              <input type="radio" class="btn-check" name="options" id="btn-check-9">
+              <label class="btn btn-light btn-primary-soft-check" onclick="filterCoursesBySkillLevel('Beginner')" for="btn-check-9">Beginner</label>
           </li>
           <!-- Item -->
           <li class="list-inline-item mb-2">
-              <input type="checkbox" class="btn-check" id="btn-check-10">
-              <label class="btn btn-light btn-primary-soft-check" for="btn-check-10">Intermediate</label>
+              <input type="radio" class="btn-check" name="options" id="btn-check-10">
+              <label class="btn btn-light btn-primary-soft-check" onclick="filterCoursesBySkillLevel('Intermediate')" for="btn-check-10">Intermediate</label>
           </li>
           <!-- Item -->
           <li class="list-inline-item mb-2">
-              <input type="checkbox" class="btn-check" id="btn-check-11">
-              <label class="btn btn-light btn-primary-soft-check" for="btn-check-11">Advanced</label>
+              <input type="radio" class="btn-check" name="options" id="btn-check-11">
+              <label class="btn btn-light btn-primary-soft-check" onclick="filterCoursesBySkillLevel('Advanced')" for="btn-check-11">Advanced</label>
           </li>
       </ul>
   </div>
   <!-- Skill level END -->
-  <!-- Language START -->
-  <div class="card card-body shadow p-4 mb-4">
-      <!-- Title -->
-      <h4 class="mb-3">Language</h4>
-      <ul class="list-inline mb-0 g-3">
-          <!-- Item -->
-          <li class="list-inline-item mb-2">
-              <input type="checkbox" class="btn-check" id="btn-check-2">
-              <label class="btn btn-light btn-primary-soft-check" for="btn-check-2">English</label>
-          </li>
-          <!-- Item -->
-          <li class="list-inline-item mb-2">
-              <input type="checkbox" class="btn-check" id="btn-check-3">
-              <label class="btn btn-light btn-primary-soft-check" for="btn-check-3">Francas</label>
-          </li>
-          <!-- Item -->
-          <li class="list-inline-item mb-2">
-              <input type="checkbox" class="btn-check" id="btn-check-4">
-              <label class="btn btn-light btn-primary-soft-check" for="btn-check-4">Hindi</label>
-          </li>
-          <!-- Item -->
-          <li class="list-inline-item mb-2">
-              <input type="checkbox" class="btn-check" id="btn-check-5">
-              <label class="btn btn-light btn-primary-soft-check" for="btn-check-5">Russian</label>
-          </li>
-          <!-- Item -->
-          <li class="list-inline-item mb-2">
-              <input type="checkbox" class="btn-check" id="btn-check-6">
-              <label class="btn btn-light btn-primary-soft-check" for="btn-check-6">Spanish</label>
-          </li>
-          <!-- Item -->
-          <li class="list-inline-item mb-2">
-              <input type="checkbox" class="btn-check" id="btn-check-7">
-              <label class="btn btn-light btn-primary-soft-check" for="btn-check-7">Bengali</label>
-          </li>
-          <!-- Item -->
-          <li class="list-inline-item mb-2">
-              <input type="checkbox" class="btn-check" id="btn-check-8">
-              <label class="btn btn-light btn-primary-soft-check" for="btn-check-8">Portuguese</label>
-          </li>
-      </ul>
-  </div>
-  <!-- Language END -->
+  
 </form>
   `;
 
@@ -440,6 +434,9 @@ function filterCoursesByPrice(priceLevel) {
 
   // Update the displayed courses
   updateCourseGrid();
+
+  localStorage.setItem('selectedPriceLevel', priceLevel);
+
 }
 
 // Attach event listeners to the radio buttons
@@ -458,7 +455,22 @@ freeRadioBtn.addEventListener('change', function () {
 paidRadioBtn.addEventListener('change', function () {
   filterCoursesByPrice('paid');
 });
+// Apply the selected price level on page load
+var selectedPriceLevel = localStorage.getItem('selectedPriceLevel');
 
+if (selectedPriceLevel === 'all') {
+  allRadioBtn.checked = true;
+} else if (selectedPriceLevel === 'free') {
+  freeRadioBtn.checked = true;
+} else if (selectedPriceLevel === 'paid') {
+  paidRadioBtn.checked = true;
+}
+
+// Trigger the filter based on the selected price level
+if (selectedPriceLevel) {
+  filterCoursesByPrice(selectedPriceLevel);
+}
+// End here
 
 /// Calculate the length of the "Finance" category
 const categoryLength = courses.filter(course => course.courseCategory === category).length;
@@ -468,9 +480,64 @@ const courseCountElement = document.getElementById('courseCount');
 courseCountElement.textContent = `(${categoryLength})`;
 
 
-;
-
 // End Here
+// Skill filtering start here
+
+// Function to filter the courses based on skill level
+function filterCoursesBySkillLevel(skillLevel) {
+  if (skillLevel === 'All') {
+    // Show all courses
+    filteredCourses = courses;
+  } else if (skillLevel === 'Beginner') {
+    // Filter courses by Beginner level
+    filteredCourses = courses.filter(function (course) {
+      return course.courseLevel === 'Beginner';
+    });
+  } else if (skillLevel === 'Intermediate') {
+    // Filter courses by Intermediate level
+    filteredCourses = courses.filter(function (course) {
+      return course.courseLevel === 'Intermediate';
+    });
+  } else if (skillLevel === 'Advanced') {
+    // Filter courses by Advanced level
+    filteredCourses = courses.filter(function (course) {
+      return course.courseLevel === 'Advanced';
+    });
+  }
+
+  // Update the displayed courses
+  updateCourseGrid();
+
+  // Save the selected course level in local storage
+  localStorage.setItem('selectedPriceLevel', priceLevel);
+
+}
+
+// Attach event listeners to the radio buttons
+var allLevelsLevel = document.getElementById('btn-check-12');
+var beginnerLevel = document.getElementById('btn-check-9');
+var intermediateLevel = document.getElementById('btn-check-10');
+var advancedLevel = document.getElementById('btn-check-11');
+
+allLevelsLevel.addEventListener('change', function () {
+    filterCoursesBySkillLevel('All');
+});
+
+beginnerLevel.addEventListener('change', function () {
+    filterCoursesBySkillLevel('Beginner');
+});
+
+intermediateLevel.addEventListener('change', function () {
+    filterCoursesBySkillLevel('Intermediate');
+});
+
+advancedLevel.addEventListener('change', function () {
+    filterCoursesBySkillLevel('Advanced');
+});
+
+
+
+// End here
 
 
 // To Select only one checkbok for filtering the courses at a time
