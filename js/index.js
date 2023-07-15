@@ -4,7 +4,6 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
-
 const MAX_UID = 1_000_000
 const MILLISECONDS_MULTIPLIER = 1000
 const TRANSITION_END = 'transitionend'
@@ -14,17 +13,17 @@ const TRANSITION_END = 'transitionend'
  * @param {string} selector
  * @returns {string}
  */
-const parseSelector = selector=>{
+const parseSelector = selector => {
     if (selector && window.CSS && window.CSS.escape) {
         // document.querySelector needs escaping to handle IDs (html5+) containing for instance /
-        selector = selector.replace(/#([^\s"#']+)/g, (match,id)=>`#${CSS.escape(id)}`)
+        selector = selector.replace(/#([^\s"#']+)/g, (match, id) => `#${CSS.escape(id)}`)
     }
 
     return selector
 }
 
 // Shout-out Angus Croll (https://goo.gl/pxwQGp)
-const toType = object=>{
+const toType = object => {
     if (object === null || object === undefined) {
         return `${object}`
     }
@@ -36,20 +35,23 @@ const toType = object=>{
  * Public Util API
  */
 
-const getUID = prefix=>{
+const getUID = prefix => {
     do {
         prefix += Math.floor(Math.random() * MAX_UID)
     } while (document.getElementById(prefix))
     return prefix
 }
 
-const getTransitionDurationFromElement = element=>{
+const getTransitionDurationFromElement = element => {
     if (!element) {
         return 0
     }
 
     // Get transition-duration of the element
-    let {transitionDuration, transitionDelay} = window.getComputedStyle(element)
+    let {
+        transitionDuration,
+        transitionDelay
+    } = window.getComputedStyle(element)
 
     const floatTransitionDuration = Number.parseFloat(transitionDuration)
     const floatTransitionDelay = Number.parseFloat(transitionDelay)
@@ -66,11 +68,11 @@ const getTransitionDurationFromElement = element=>{
     return (Number.parseFloat(transitionDuration) + Number.parseFloat(transitionDelay)) * MILLISECONDS_MULTIPLIER
 }
 
-const triggerTransitionEnd = element=>{
+const triggerTransitionEnd = element => {
     element.dispatchEvent(new Event(TRANSITION_END))
 }
 
-const isElement = object=>{
+const isElement = object => {
     if (!object || typeof object !== 'object') {
         return false
     }
@@ -82,7 +84,7 @@ const isElement = object=>{
     return typeof object.nodeType !== 'undefined'
 }
 
-const getElement = object=>{
+const getElement = object => {
     // it's a jQuery object or a node element
     if (isElement(object)) {
         return object.jquery ? object[0] : object
@@ -95,7 +97,7 @@ const getElement = object=>{
     return null
 }
 
-const isVisible = element=>{
+const isVisible = element => {
     if (!isElement(element) || element.getClientRects().length === 0) {
         return false
     }
@@ -122,7 +124,7 @@ const isVisible = element=>{
     return elementIsVisible
 }
 
-const isDisabled = element=>{
+const isDisabled = element => {
     if (!element || element.nodeType !== Node.ELEMENT_NODE) {
         return true
     }
@@ -138,7 +140,7 @@ const isDisabled = element=>{
     return element.hasAttribute('disabled') && element.getAttribute('disabled') !== 'false'
 }
 
-const findShadowRoot = element=>{
+const findShadowRoot = element => {
     if (!document.documentElement.attachShadow) {
         return null
     }
@@ -161,7 +163,7 @@ const findShadowRoot = element=>{
     return findShadowRoot(element.parentNode)
 }
 
-const noop = ()=>{}
+const noop = () => {}
 
 /**
  * Trick to restart an element's animation
@@ -171,12 +173,12 @@ const noop = ()=>{}
  *
  * @see https://www.charistheo.io/blog/2021/02/restart-a-css-animation-with-javascript/#restarting-a-css-animation
  */
-const reflow = element=>{
+const reflow = element => {
     element.offsetHeight
     // eslint-disable-line no-unused-expressions
 }
 
-const getjQuery = ()=>{
+const getjQuery = () => {
     if (window.jQuery && !document.body.hasAttribute('data-bs-no-jquery')) {
         return window.jQuery
     }
@@ -186,16 +188,15 @@ const getjQuery = ()=>{
 
 const DOMContentLoadedCallbacks = []
 
-const onDOMContentLoaded = callback=>{
+const onDOMContentLoaded = callback => {
     if (document.readyState === 'loading') {
         // add listener on the first call when the document is in loading state
         if (!DOMContentLoadedCallbacks.length) {
-            document.addEventListener('DOMContentLoaded', ()=>{
+            document.addEventListener('DOMContentLoaded', () => {
                 for (const callback of DOMContentLoadedCallbacks) {
                     callback()
                 }
-            }
-            )
+            })
         }
 
         DOMContentLoadedCallbacks.push(callback)
@@ -204,10 +205,10 @@ const onDOMContentLoaded = callback=>{
     }
 }
 
-const isRTL = ()=>document.documentElement.dir === 'rtl'
+const isRTL = () => document.documentElement.dir === 'rtl'
 
-const defineJQueryPlugin = plugin=>{
-    onDOMContentLoaded(()=>{
+const defineJQueryPlugin = plugin => {
+    onDOMContentLoaded(() => {
         const $ = getjQuery()
         /* istanbul ignore if */
         if ($) {
@@ -215,20 +216,19 @@ const defineJQueryPlugin = plugin=>{
             const JQUERY_NO_CONFLICT = $.fn[name]
             $.fn[name] = plugin.jQueryInterface
             $.fn[name].Constructor = plugin
-            $.fn[name].noConflict = ()=>{
+            $.fn[name].noConflict = () => {
                 $.fn[name] = JQUERY_NO_CONFLICT
                 return plugin.jQueryInterface
             }
         }
-    }
-    )
+    })
 }
 
-const execute = (possibleCallback,args=[],defaultValue=possibleCallback)=>{
+const execute = (possibleCallback, args = [], defaultValue = possibleCallback) => {
     return typeof possibleCallback === 'function' ? possibleCallback(...args) : defaultValue
 }
 
-const executeAfterTransition = (callback,transitionElement,waitForTransition=true)=>{
+const executeAfterTransition = (callback, transitionElement, waitForTransition = true) => {
     if (!waitForTransition) {
         execute(callback)
         return
@@ -239,7 +239,9 @@ const executeAfterTransition = (callback,transitionElement,waitForTransition=tru
 
     let called = false
 
-    const handler = ({target})=>{
+    const handler = ({
+        target
+    }) => {
         if (target !== transitionElement) {
             return
         }
@@ -250,12 +252,11 @@ const executeAfterTransition = (callback,transitionElement,waitForTransition=tru
     }
 
     transitionElement.addEventListener(TRANSITION_END, handler)
-    setTimeout(()=>{
+    setTimeout(() => {
         if (!called) {
             triggerTransitionEnd(transitionElement)
         }
-    }
-    , emulatedDuration)
+    }, emulatedDuration)
 }
 
 /**
@@ -267,7 +268,7 @@ const executeAfterTransition = (callback,transitionElement,waitForTransition=tru
  * @param isCycleAllowed
  * @return {Element|elem} The proper element
  */
-const getNextActiveElement = (list,activeElement,shouldGetNext,isCycleAllowed)=>{
+const getNextActiveElement = (list, activeElement, shouldGetNext, isCycleAllowed) => {
     const listLength = list.length
     let index = list.indexOf(activeElement)
 
@@ -286,4 +287,24 @@ const getNextActiveElement = (list,activeElement,shouldGetNext,isCycleAllowed)=>
     return list[Math.max(0, Math.min(index, listLength - 1))]
 }
 
-export {defineJQueryPlugin, execute, executeAfterTransition, findShadowRoot, getElement, getjQuery, getNextActiveElement, getTransitionDurationFromElement, getUID, isDisabled, isElement, isRTL, isVisible, noop, onDOMContentLoaded, parseSelector, reflow, triggerTransitionEnd, toType}
+export {
+    defineJQueryPlugin,
+    execute,
+    executeAfterTransition,
+    findShadowRoot,
+    getElement,
+    getjQuery,
+    getNextActiveElement,
+    getTransitionDurationFromElement,
+    getUID,
+    isDisabled,
+    isElement,
+    isRTL,
+    isVisible,
+    noop,
+    onDOMContentLoaded,
+    parseSelector,
+    reflow,
+    triggerTransitionEnd,
+    toType
+}

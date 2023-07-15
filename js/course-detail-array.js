@@ -71,7 +71,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 300,
+        courseCurrentPrice: 250,
         courseOldPrice: 250,
         courseCategory: "Web Design",
         courseTotalLectures: 15,
@@ -113,7 +113,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 250,
+        courseCurrentPrice: 300,
         courseOldPrice: 250,
         courseCategory: "Web Design",
         courseTotalLectures: 15,
@@ -155,7 +155,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 200,
+        courseCurrentPrice: 300,
         courseOldPrice: 250,
         courseCategory: "Web Design",
         courseTotalLectures: 15,
@@ -197,7 +197,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 200,
+        courseCurrentPrice: 250,
         courseOldPrice: 250,
         courseCategory: "Web Design",
         courseTotalLectures: 15,
@@ -239,7 +239,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 200,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Web Design",
         courseTotalLectures: 15,
@@ -281,7 +281,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 250,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Web Design",
         courseTotalLectures: 15,
@@ -323,7 +323,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 250,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Web Design",
         courseTotalLectures: 15,
@@ -365,7 +365,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 200,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Web Design",
         courseTotalLectures: 15,
@@ -407,7 +407,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 300,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Web Design",
         courseTotalLectures: 15,
@@ -490,7 +490,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 200,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Graphic Design",
         courseTotalLectures: 15,
@@ -532,7 +532,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 200,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Graphic Design",
         courseTotalLectures: 15,
@@ -575,7 +575,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 200,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Graphic Design",
         courseTotalLectures: 15,
@@ -618,7 +618,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 200,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Graphic Design",
         courseTotalLectures: 15,
@@ -660,7 +660,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 200,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Graphic Design",
         courseTotalLectures: 15,
@@ -702,7 +702,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 200,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Graphic Design",
         courseTotalLectures: 15,
@@ -743,7 +743,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 300,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Graphic Design",
         courseTotalLectures: 15,
@@ -785,7 +785,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 300,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Graphic Design",
         courseTotalLectures: 15,
@@ -826,7 +826,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 300,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Graphic Design",
         courseTotalLectures: 15,
@@ -867,7 +867,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 300,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Development",
         courseTotalLectures: 15,
@@ -909,7 +909,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 300,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Development",
         courseTotalLectures: 15,
@@ -951,7 +951,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 200,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Development",
         courseTotalLectures: 15,
@@ -992,7 +992,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 250,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Development",
         courseTotalLectures: 15,
@@ -1033,7 +1033,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 250,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Development",
         courseTotalLectures: 15,
@@ -1074,7 +1074,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 200,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Development",
         courseTotalLectures: 15,
@@ -1115,7 +1115,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 200,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Development",
         courseTotalLectures: 15,
@@ -1156,7 +1156,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 200,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Development",
         courseTotalLectures: 15,
@@ -1197,7 +1197,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 300,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Development",
         courseTotalLectures: 15,
@@ -1238,7 +1238,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 300,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Development",
         courseTotalLectures: 15,
@@ -1322,7 +1322,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 200,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Marketing",
         courseTotalLectures: 15,
@@ -1363,7 +1363,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 200,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Marketing",
         courseTotalLectures: 15,
@@ -1404,7 +1404,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 250,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Marketing",
         courseTotalLectures: 15,
@@ -1445,7 +1445,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 200,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Marketing",
         courseTotalLectures: 15,
@@ -1486,7 +1486,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 250,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Marketing",
         courseTotalLectures: 15,
@@ -1527,7 +1527,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 200,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Marketing",
         courseTotalLectures: 15,
@@ -1568,7 +1568,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 250,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Marketing",
         courseTotalLectures: 15,
@@ -1609,7 +1609,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 300,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Marketing",
         courseTotalLectures: 15,
@@ -1650,7 +1650,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 300,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Marketing",
         courseTotalLectures: 15,
@@ -1736,7 +1736,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 200,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Finance",
         courseTotalLectures: 15,
@@ -1778,7 +1778,7 @@ var courses = [
         
       
       courseRating: 5,
-      courseCurrentPrice: 200,
+      courseCurrentPrice: 0,
       courseOldPrice: 250,
       courseCategory: "Finance",
       courseTotalLectures: 15,
@@ -1820,7 +1820,7 @@ var courses = [
         
       
       courseRating: 5,
-      courseCurrentPrice: 200,
+      courseCurrentPrice: 0,
       courseOldPrice: 250,
       courseCategory: "Finance",
       courseTotalLectures: 15,
@@ -1862,7 +1862,7 @@ var courses = [
         
       
       courseRating: 5,
-      courseCurrentPrice: 200,
+      courseCurrentPrice: 0,
       courseOldPrice: 250,
       courseCategory: "Finance",
       courseTotalLectures: 15,
@@ -1904,7 +1904,7 @@ var courses = [
         
       
       courseRating: 5,
-      courseCurrentPrice: 200,
+      courseCurrentPrice: 0,
       courseOldPrice: 250,
       courseCategory: "Finance",
       courseTotalLectures: 15,
@@ -1946,7 +1946,7 @@ var courses = [
         
       
       courseRating: 5,
-      courseCurrentPrice: 250,
+      courseCurrentPrice: 0,
       courseOldPrice: 250,
       courseCategory: "Finance",
       courseTotalLectures: 15,
@@ -1988,7 +1988,7 @@ var courses = [
         
       
       courseRating: 5,
-      courseCurrentPrice: 250,
+      courseCurrentPrice: 0,
       courseOldPrice: 250,
       courseCategory: "Finance",
       courseTotalLectures: 15,
@@ -2030,7 +2030,7 @@ var courses = [
         
       
       courseRating: 5,
-      courseCurrentPrice: 250,
+      courseCurrentPrice: 0,
       courseOldPrice: 250,
       courseCategory: "Finance",
       courseTotalLectures: 15,
@@ -2072,7 +2072,7 @@ var courses = [
         
       
       courseRating: 5,
-      courseCurrentPrice: 300,
+      courseCurrentPrice: 0,
       courseOldPrice: 250,
       courseCategory: "Finance",
       courseTotalLectures: 15,
@@ -2156,7 +2156,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 200,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Accounting",
         courseTotalLectures: 15,
@@ -2198,7 +2198,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 200,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Accounting",
         courseTotalLectures: 15,
@@ -2240,7 +2240,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 200,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Accounting",
         courseTotalLectures: 15,
@@ -2282,7 +2282,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 200,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Accounting",
         courseTotalLectures: 15,
@@ -2324,7 +2324,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 200,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Accounting",
         courseTotalLectures: 15,
@@ -2366,7 +2366,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 250,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Accounting",
         courseTotalLectures: 15,
@@ -2408,7 +2408,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 300,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Accounting",
         courseTotalLectures: 15,
@@ -2451,7 +2451,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 300,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Accounting",
         courseTotalLectures: 15,
@@ -2495,7 +2495,7 @@ var courses = [
         
       
       courseRating: 5,
-      courseCurrentPrice: 300,
+      courseCurrentPrice: 0,
       courseOldPrice: 250,
       courseCategory: "Accounting",
       courseTotalLectures: 15,
@@ -2578,7 +2578,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 200,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Photography",
         courseTotalLectures: 15,
@@ -2619,7 +2619,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 200,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Photography",
         courseTotalLectures: 15,
@@ -2660,7 +2660,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 200,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Photography",
         courseTotalLectures: 15,
@@ -2701,7 +2701,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 200,
+        courseCurrentPrice: 0,
         courseOldPrice: 250,
         courseCategory: "Photography",
         courseTotalLectures: 15,
