@@ -2742,7 +2742,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 0,
+        courseCurrentPrice: 300,
         courseOldPrice: 250,
         courseCategory: "Photography",
         courseTotalLectures: 15,
@@ -2783,7 +2783,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 0,
+        courseCurrentPrice: 250,
         courseOldPrice: 250,
         courseCategory: "Photography",
         courseTotalLectures: 15,
@@ -2824,7 +2824,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 0,
+        courseCurrentPrice: 250,
         courseOldPrice: 250,
         courseCategory: "Photography",
         courseTotalLectures: 15,
@@ -2865,7 +2865,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 0,
+        courseCurrentPrice: 250,
         courseOldPrice: 250,
         courseCategory: "Photography",
         courseTotalLectures: 15,
@@ -2906,7 +2906,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 0,
+        courseCurrentPrice: 300,
         courseOldPrice: 250,
         courseCategory: "Photography",
         courseTotalLectures: 15,
@@ -2947,7 +2947,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 0,
+        courseCurrentPrice: 300,
         courseOldPrice: 250,
         courseCategory: "Photography",
         courseTotalLectures: 15,
@@ -3029,7 +3029,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 0,
+        courseCurrentPrice: 200,
         courseOldPrice: 250,
         courseCategory: "Translation",
         courseTotalLectures: 15,
@@ -3070,7 +3070,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 0,
+        courseCurrentPrice: 200,
         courseOldPrice: 250,
         courseCategory: "Translation",
         courseTotalLectures: 15,
@@ -3111,7 +3111,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 0,
+        courseCurrentPrice: 200,
         courseOldPrice: 250,
         courseCategory: "Translation",
         courseTotalLectures: 15,
@@ -3152,7 +3152,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 0,
+        courseCurrentPrice: 200,
         courseOldPrice: 250,
         courseCategory: "Translation",
         courseTotalLectures: 15,
@@ -3193,7 +3193,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 0,
+        courseCurrentPrice: 200,
         courseOldPrice: 250,
         courseCategory: "Translation",
         courseTotalLectures: 15,
@@ -3234,7 +3234,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 0,
+        courseCurrentPrice: 250,
         courseOldPrice: 250,
         courseCategory: "Translation",
         courseTotalLectures: 15,
@@ -3275,7 +3275,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 0,
+        courseCurrentPrice: 300,
         courseOldPrice: 250,
         courseCategory: "Translation",
         courseTotalLectures: 15,
@@ -3316,7 +3316,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 0,
+        courseCurrentPrice: 300,
         courseOldPrice: 250,
         courseCategory: "Translation",
         courseTotalLectures: 15,
@@ -3356,7 +3356,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 0,
+        courseCurrentPrice: 300,
         courseOldPrice: 250,
         courseCategory: "Translation",
         courseTotalLectures: 15,
