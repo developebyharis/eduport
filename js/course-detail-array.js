@@ -31,7 +31,7 @@ var courses = [
       
       courseRating: 5,
       courseCurrentPrice: 0,
-      courseOldPrice: 250,
+      courseOldPrice: 200,
       courseCategory: "Web Design",
       courseTotalLectures: 15,
       courseTotalHours: 12,
@@ -71,7 +71,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 250,
+        courseCurrentPrice: 200,
         courseOldPrice: 250,
         courseCategory: "Web Design",
         courseTotalLectures: 15,
@@ -408,7 +408,7 @@ var courses = [
         
         courseRating: 5,
         courseCurrentPrice: 0,
-        courseOldPrice: 250,
+        courseOldPrice: 200,
         courseCategory: "Web Design",
         courseTotalLectures: 15,
         courseTotalHours: 12,
@@ -449,7 +449,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 0,
+        courseCurrentPrice: 00,
         courseOldPrice: 250,
         courseCategory: "Graphic Design",
         courseTotalLectures: 15,
@@ -490,7 +490,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 0,
+        courseCurrentPrice: 250,
         courseOldPrice: 250,
         courseCategory: "Graphic Design",
         courseTotalLectures: 15,
@@ -532,7 +532,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 0,
+        courseCurrentPrice: 250,
         courseOldPrice: 250,
         courseCategory: "Graphic Design",
         courseTotalLectures: 15,
@@ -575,7 +575,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 0,
+        courseCurrentPrice: 250,
         courseOldPrice: 250,
         courseCategory: "Graphic Design",
         courseTotalLectures: 15,
@@ -618,7 +618,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 0,
+        courseCurrentPrice: 250,
         courseOldPrice: 250,
         courseCategory: "Graphic Design",
         courseTotalLectures: 15,
@@ -660,7 +660,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 0,
+        courseCurrentPrice: 200,
         courseOldPrice: 250,
         courseCategory: "Graphic Design",
         courseTotalLectures: 15,
@@ -702,7 +702,7 @@ var courses = [
           
         
         courseRating: 5,
-        courseCurrentPrice: 0,
+        courseCurrentPrice: 30,
         courseOldPrice: 250,
         courseCategory: "Graphic Design",
         courseTotalLectures: 15,
