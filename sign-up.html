@@ -5,7 +5,7 @@
         <!-- Meta Tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="author" content="Webestica.com">
+         
         <meta name="google-signin-client_id" content="257634213039-7ghgjilg4ptcggsvca3gu5aisnl0s0an.apps.googleusercontent.com">
 
         <meta name="description" content="Eduport- LMS, Education and Course Theme">
@@ -118,7 +118,7 @@
                                         <!-- Button -->
                                         <div class="align-items-center mt-0">
                                             <div class="d-grid">
-                                                <button class="btn btn-primary mb-0" type="button">Sign Up</button>
+                                                <button class="btn btn-primary mb-0" id="signUp" type="button">Sign Up</button>
                                             </div>
                                         </div>
                                     </form>
@@ -131,15 +131,12 @@
                                             <p class="small position-absolute top-50 start-50 translate-middle bg-body px-5">Or</p>
                                         </div>
                                         <!-- Social btn -->
-                                        <!-- <div class="col-xxl-6 d-grid" id="google-signin-button" onclick="initGoogleSignIn()">
+                                        <div class="col-xxl-6 d-grid" >
                                             <a class="btn bg-google mb-2 mb-xxl-0" >
                                                 <i class="fab fa-fw fa-google text-white me-2"></i>
                                                 Signup with Google
                                             </a>
-                                        </div> -->
-                                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
-
-	  <a href="#" onclick="signOut();">Sign out</a>
+                                        </div>
 
                                         <!-- Social btn -->
                                         <div class="col-xxl-6 d-grid">
@@ -167,12 +164,20 @@
         <div class="back-top">
             <i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i>
         </div>
+          <!-- firebase Authentication Script -->
+          <script type="module">
+          
+          
+          </script>
+
         <!-- Bootstrap JS -->
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/script.js"></script>
 
         <script src="js/functions.js"></script>
         <script src="js/script.js"></script>
+        <script src="js/authentication.js"></script>
+
         <script src="https://apis.google.com/js/platform.js" async defer></script>
     </body>
 </html>

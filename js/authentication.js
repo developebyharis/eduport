@@ -35,8 +35,51 @@ measurementId: "G-PNJPY0B5DW"
 
   function showUserDetails(user) {
     document.getElementById('userDetails').innerHTML = `
-    
-    <li class="nav-item ms-3 dropdown">
+    <!-- Notification dropdown START -->
+    <li class="nav-item mx-2 dropdown notification-icon">
+        <!-- Notification button -->
+        <a class="btn btn-light btn-round mb-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+            <i class="bi bi-bell fa-fw"></i>
+        </a>
+        <!-- Notification dote -->
+        <span class="notif-badge animation-blink"></span>
+        <!-- Notification dropdown menu START -->
+        <div class="dropdown-menu dropdown-animation dropdown-menu-end dropdown-menu-size-md p-0 shadow-lg border-0">
+            <div class="card bg-transparent">
+                <div class="card-header bg-transparent border-bottom py-4 d-flex justify-content-between align-items-center">
+                    <h6 class="m-0">
+                        Notifications <span class="badge bg-danger bg-opacity-10 text-danger ms-2">2 new</span>
+                    </h6>
+                    <a class="small" href="#">Clear all</a>
+                </div>
+                <div class="card-body p-0">
+                    <ul class="list-group list-unstyled list-group-flush">
+                        <!-- Notif item -->
+                        <li>
+                            <a href="#" class="list-group-item-action border-0 border-bottom d-flex p-3">
+                                <div class="me-3">
+                                    <div class="avatar avatar-md">
+                                        <img class="avatar-img rounded-circle" src="images/03.jpg" alt="avatar">
+                                    </div>
+                                </div>
+                                <div>
+                                    <h6 class="mb-1">Update v2.3 completed successfully</h6>
+                                    <p class="small text-body m-0">What's new! Find out about new features</p>
+                                    <small class="text-body">5 min ago</small>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Button -->
+                <div class="card-footer bg-transparent border-0 py-3 text-center position-relative">
+                    <a href="#" class="stretched-link">See all incoming activity</a>
+                </div>
+            </div>
+        </div>
+        <!-- Notification dropdown menu END -->
+    </li>
+    <li class="nav-item ms-6 px-1 my--4 dropdown">
     <!-- Avatar -->
     <a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
         <img class="avatar-img rounded-circle" src="${user.photoURL}" alt="${user.displayName}">

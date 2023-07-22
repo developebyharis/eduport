@@ -370,61 +370,18 @@
                             <!-- Cart dropdown menu END -->
                         </li>
                         <!-- Add to cart END -->
-                        <!-- Notification dropdown START -->
-                        <li class="nav-item ms-2 ms-sm-3 dropdown d-none d-sm-block" id="dashboard">
-                            <!-- Notification button -->
-                            <a class="btn btn-light btn-round mb-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-                                <i class="bi bi-bell fa-fw"></i>
-                            </a>
-                            <!-- Notification dote -->
-                            <span class="notif-badge animation-blink"></span>
-                            <!-- Notification dropdown menu START -->
-                            <div class="dropdown-menu dropdown-animation dropdown-menu-end dropdown-menu-size-md p-0 shadow-lg border-0">
-                                <div class="card bg-transparent">
-                                    <div class="card-header bg-transparent border-bottom py-4 d-flex justify-content-between align-items-center">
-                                        <h6 class="m-0">
-                                            Notifications <span class="badge bg-danger bg-opacity-10 text-danger ms-2">2 new</span>
-                                        </h6>
-                                        <a class="small" href="#">Clear all</a>
-                                    </div>
-                                    <div class="card-body p-0">
-                                        <ul class="list-group list-unstyled list-group-flush">
-                                            <!-- Notif item -->
-                                            <li>
-                                                <a href="#" class="list-group-item-action border-0 border-bottom d-flex p-3">
-                                                    <div class="me-3">
-                                                        <div class="avatar avatar-md">
-                                                            <img class="avatar-img rounded-circle" src="images/03.jpg" alt="avatar">
-                                                        </div>
-                                                    </div>
-                                                    <div>
-                                                        <h6 class="mb-1">Update v2.3 completed successfully</h6>
-                                                        <p class="small text-body m-0">What's new! Find out about new features</p>
-                                                        <small class="text-body">5 min ago</small>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- Button -->
-                                    <div class="card-footer bg-transparent border-0 py-3 text-center position-relative">
-                                        <a href="#" class="stretched-link">See all incoming activity</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Notification dropdown menu END -->
-                        </li>
+                        <li id="LoginScreen">
+                            <button id="login" class=" ms-4 btn btn-primary">Login</button>
+                    </li>
+                       
                         <!-- Notification dropdown END -->
                         <!-- Profile dropdown START -->
-                        <li id="LoginScreen">
-                                <button id="login" class=" ms-4 btn btn-primary">Login</button>
-                        </li>
-                        <div id="dashboard">
+                        <li id="dashboard">
                         <li id="userDetails">
                            
                         </li>
                         <li id="logout">Logout</li>
-                    </div>
+                    </li>
                     </ul>
                     <!-- Profile and notification END -->
                 </div>
@@ -904,83 +861,14 @@ Trending courses START -->
                     <div class="row">
                         <!-- Slider START -->
                         <div class="tiny-slider arrow-round arrow-blur arrow-hover">
-                            <div class="tiny-slider-inner pb-1" id="trendingCourses" data-autoplay="true" data-arrow="true" data-edge="2" data-dots="false" data-items="3" data-items-lg="2" data-items-sm="1">
-                                <!-- Card item START -->
-                                <div>
-                                    <div class="card action-trigger-hover border bg-transparent">
-                                        <!-- Image -->
-                                        <img src="images/14.jpg" class="card-img-top" alt="course image">
-                                        <!-- Ribbon -->
-                                        <div class="ribbon mt-3">
-                                            <span>Free</span>
-                                        </div>
-                                        <!-- Card body -->
-                                        <div class="card-body pb-0">
-                                            <!-- Badge and favorite -->
-                                            <div class="d-flex justify-content-between mb-3">
-                                                <span class="hstack gap-2">
-                                                    <a href="#" class="badge bg-primary bg-opacity-10 text-primary">Design</a>
-                                                    <a href="#" class="badge text-bg-dark">Beginner</a>
-                                                </span>
-                                                <a href="#" class="h6 fw-light mb-0">
-                                                    <i class="far fa-bookmark"></i>
-                                                </a>
-                                            </div>
-                                            <!-- Title / -->
-                                            <h5 class="card-title">
-                                                <a href="#">The complete Digital Marketing Course - 8 Course in 1</a>
-                                            </h5>
-                                            <!-- Rating -->
-                                            <div class="d-flex justify-content-between mb-2">
-                                                <div class="hstack gap-2">
-                                                    <p class="text-warning m-0">
-                                                        4.5<i class="fas fa-star text-warning ms-1"></i>
-                                                    </p>
-                                                    <span class="small">(6500)</span>
-                                                </div>
-                                                <div class="hstack gap-2">
-                                                    <p class="h6 fw-light mb-0 m-0">6500</p>
-                                                    <span class="small">(Student)</span>
-                                                </div>
-                                            </div>
-                                            <!-- Time -->
-                                            <div class="hstack gap-3">
-                                                <span class="h6 fw-light mb-0">
-                                                    <i class="far fa-clock text-danger me-2"></i>
-                                                    6h 56m
-                                                </span>
-                                                <span class="h6 fw-light mb-0">
-                                                    <i class="fas fa-table text-orange me-2"></i>
-                                                    82 lectures
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <!-- Card footer -->
-                                        <div class="card-footer pt-0 bg-transparent">
-                                            <hr>
-                                            <!-- Avatar and Price -->
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <!-- Avatar -->
-                                                <div class="d-flex align-items-center">
-                                                    <div class="avatar avatar-sm">
-                                                        <img class="avatar-img rounded-1" src="images/10.jpg" alt="avatar">
-                                                    </div>
-                                                    <p class="mb-0 ms-2">
-                                                        <a href="#" class="h6 fw-light mb-0">Larry Lawson</a>
-                                                    </p>
-                                                </div>
-                                                <!-- Price -->
-                                                <div>
-                                                    <h4 class="text-success mb-0 item-show">Free</h4>
-                                                    <a href="#" class="btn btn-sm btn-success-soft item-show-hover">
-                                                        <i class="fas fa-shopping-cart me-2"></i>
-                                                        Add to cart
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div class="tiny-slider-inner pb-1" data-autoplay="true" data-arrow="true" data-edge="2" data-dots="false" data-items="3" data-items-lg="2" data-items-sm="1">
+                                <div id="trendingCourses">
+
+
+                             </div>
                                 </div>
+                                <!-- Card item START -->
+                                
                                 <!-- Card item END -->
                                 <!-- Card item END -->
                             </div>
@@ -1356,7 +1244,7 @@ Footer START -->
                             <div class="text-primary-hover">
                                 Copyrights 
                                 <a href="https://hariskhan.netlify.app/" target="_blank" class="text-body">
-                                    © 2022-<script>
+                                    ©   <script>
                                         document.write(new Date().getFullYear())
                                     </script>
                                     Eduport
@@ -1407,7 +1295,7 @@ Footer START -->
             </div>
         </footer>
         <!-- =======================
-Footer END -->
+Footer END -->     
         <!-- Back to top -->
         <div class="back-top">
             <i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i>
@@ -1432,6 +1320,7 @@ Footer END -->
         <!-- <script src="js/search.js"></script> -->
         <script src="js/cart.js"></script>
         <script src="js/checkout.js"></script>
+        <script src="js/trendingCourses.js"></script>
         <script src="js/course-detail-array.js"></script>
     </body>
 </html>

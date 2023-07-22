@@ -1,6 +1,6 @@
 
 // Array of Courses
-var courses = [
+let courses = [
     {
       id: 1,
       courseImage: "../images/08.jpg",
@@ -39,7 +39,15 @@ var courses = [
       coursePriceLevel: "free",
       courseLevel: "Beginner",
       courseTotalStrength: 5000,
-      courseCertificate: "Yes"
+      courseCertificate: "Yes",
+      courseImagesVideos: [
+        {
+        title: "Introduction to Javascript",
+         courseImages: "/courseImages/download.png",
+         courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+        
+        },
+        ],
     }
 
     ,{
@@ -80,7 +88,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Beginner",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "../courseImages/download.png",
+             courseVideo: "/courseVideos/Conditional expressions in JavaScript   JavaScript Tutorial in Hindi #7.mp4",
+            
+            },
+            ],
     }
 
     ,
@@ -122,7 +138,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Beginner",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,
@@ -164,7 +188,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Beginner",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,
@@ -206,7 +238,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Intermediate",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,
@@ -248,7 +288,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Intermediate",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,
@@ -290,7 +338,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Intermediate",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,
@@ -332,7 +388,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Advanced",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,
@@ -374,7 +438,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Advanced",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,
@@ -416,7 +488,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Advanced",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,
@@ -458,7 +538,15 @@ var courses = [
         coursePriceLevel: "free",
         courseLevel: "Beginner",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
     ,
     {
@@ -499,7 +587,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Beginner",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,
@@ -541,7 +637,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Beginner",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,
@@ -584,7 +688,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Beginner",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,
@@ -627,7 +739,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Intermediate",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
     ,
        
@@ -669,7 +789,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Intermediate",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
     ,
        
@@ -711,7 +839,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Intermediate",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
     ,   
     {
@@ -752,7 +888,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Advanced",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
     ,
        
@@ -794,7 +938,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Advanced",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
     ,   
     {
@@ -835,7 +987,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Advanced",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
     ,   
     {
@@ -876,7 +1036,15 @@ var courses = [
         coursePriceLevel: "free",
         courseLevel: "Beginner",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,
@@ -918,7 +1086,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Beginner",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,
@@ -960,7 +1136,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Beginner",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,{
@@ -1001,7 +1185,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Beginner",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,{
@@ -1042,7 +1234,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Intermediate",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,{
@@ -1083,7 +1283,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Intermediate",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,{
@@ -1124,7 +1332,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Intermediate",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,{
@@ -1165,7 +1381,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Advanced",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,{
@@ -1206,7 +1430,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Advanced",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,{
@@ -1247,7 +1479,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Advanced",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,
@@ -1290,7 +1530,15 @@ var courses = [
         coursePriceLevel: "free",
         courseLevel: "Beginner",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,{
@@ -1331,7 +1579,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Beginner",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,{
@@ -1372,7 +1628,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Beginner",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,{
@@ -1413,7 +1677,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Beginner",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,{
@@ -1454,7 +1726,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Intermediate",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,{
@@ -1495,7 +1775,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Intermediate",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,{
@@ -1536,7 +1824,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Intermediate",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,{
@@ -1577,7 +1873,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Advanced",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,{
@@ -1618,7 +1922,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Advanced",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,{
@@ -1659,7 +1971,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Advanced",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,
@@ -1702,7 +2022,15 @@ var courses = [
       coursePriceLevel: "free",
       courseLevel: "Beginner",
       courseTotalStrength: 5000,
-      courseCertificate: "Yes"
+      courseCertificate: "Yes",
+      courseImagesVideos: [
+          {
+          title: "Introduction to Javascript",
+           courseImages: "/courseImages/download.png",
+           courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+          
+          },
+          ],
     }
 
     ,
@@ -1745,7 +2073,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Beginner",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,
@@ -1787,7 +2123,15 @@ var courses = [
       coursePriceLevel: "paid",
       courseLevel: "Beginner",
       courseTotalStrength: 5000,
-      courseCertificate: "Yes"
+      courseCertificate: "Yes",
+      courseImagesVideos: [
+          {
+          title: "Introduction to Javascript",
+           courseImages: "/courseImages/download.png",
+           courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+          
+          },
+          ],
     }
 
     ,
@@ -1829,7 +2173,15 @@ var courses = [
       coursePriceLevel: "paid",
       courseLevel: "Beginner",
       courseTotalStrength: 5000,
-      courseCertificate: "Yes"
+      courseCertificate: "Yes",
+      courseImagesVideos: [
+          {
+          title: "Introduction to Javascript",
+           courseImages: "/courseImages/download.png",
+           courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+          
+          },
+          ],
     }
 
     ,
@@ -1871,7 +2223,15 @@ var courses = [
       coursePriceLevel: "paid",
       courseLevel: "Intermediate",
       courseTotalStrength: 5000,
-      courseCertificate: "Yes"
+      courseCertificate: "Yes",
+      courseImagesVideos: [
+          {
+          title: "Introduction to Javascript",
+           courseImages: "/courseImages/download.png",
+           courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+          
+          },
+          ],
     }
 
     ,
@@ -1913,7 +2273,15 @@ var courses = [
       coursePriceLevel: "paid",
       courseLevel: "Intermediate",
       courseTotalStrength: 5000,
-      courseCertificate: "Yes"
+      courseCertificate: "Yes",
+      courseImagesVideos: [
+          {
+          title: "Introduction to Javascript",
+           courseImages: "/courseImages/download.png",
+           courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+          
+          },
+          ],
     }
 
     ,
@@ -1955,7 +2323,15 @@ var courses = [
       coursePriceLevel: "paid",
       courseLevel: "Intermediate",
       courseTotalStrength: 5000,
-      courseCertificate: "Yes"
+      courseCertificate: "Yes",
+      courseImagesVideos: [
+          {
+          title: "Introduction to Javascript",
+           courseImages: "/courseImages/download.png",
+           courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+          
+          },
+          ],
     }
 
     ,
@@ -1997,7 +2373,15 @@ var courses = [
       coursePriceLevel: "paid",
       courseLevel: "Advanced",
       courseTotalStrength: 5000,
-      courseCertificate: "Yes"
+      courseCertificate: "Yes",
+      courseImagesVideos: [
+          {
+          title: "Introduction to Javascript",
+           courseImages: "/courseImages/download.png",
+           courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+          
+          },
+          ],
     }
 
     ,
@@ -2039,7 +2423,15 @@ var courses = [
       coursePriceLevel: "paid",
       courseLevel: "Advanced",
       courseTotalStrength: 5000,
-      courseCertificate: "Yes"
+      courseCertificate: "Yes",
+      courseImagesVideos: [
+          {
+          title: "Introduction to Javascript",
+           courseImages: "/courseImages/download.png",
+           courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+          
+          },
+          ],
     }
 
     ,
@@ -2081,7 +2473,15 @@ var courses = [
       coursePriceLevel: "paid",
       courseLevel: "Advanced",
       courseTotalStrength: 5000,
-      courseCertificate: "Yes"
+      courseCertificate: "Yes",
+      courseImagesVideos: [
+          {
+          title: "Introduction to Javascript",
+           courseImages: "/courseImages/download.png",
+           courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+          
+          },
+          ],
     }
 
     ,
@@ -2124,7 +2524,15 @@ var courses = [
         coursePriceLevel: "free",
         courseLevel: "Beginner",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
     ,
     {
@@ -2165,7 +2573,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Beginner",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,
@@ -2207,7 +2623,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Beginner",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,
@@ -2249,7 +2673,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Beginner",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,
@@ -2291,7 +2723,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Intermediate",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,
@@ -2333,7 +2773,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Intermediate",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,
@@ -2375,7 +2823,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Intermediate",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,
@@ -2417,7 +2873,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Advanced",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,
@@ -2460,7 +2924,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Advanced",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,
@@ -2504,7 +2976,15 @@ var courses = [
       coursePriceLevel: "paid",
       courseLevel: "Advanced",
       courseTotalStrength: 5000,
-      courseCertificate: "Yes"
+      courseCertificate: "Yes",
+      courseImagesVideos: [
+          {
+          title: "Introduction to Javascript",
+           courseImages: "/courseImages/download.png",
+           courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+          
+          },
+          ],
     }
 
     ,
@@ -2546,7 +3026,15 @@ var courses = [
         coursePriceLevel: "free",
         courseLevel: "Beginner",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
     ,
     {
@@ -2587,7 +3075,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Beginner",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,{
@@ -2628,7 +3124,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Beginner",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,{
@@ -2669,7 +3173,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Beginner",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,{
@@ -2710,7 +3222,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Intermediate",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,{
@@ -2751,7 +3271,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Intermediate",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,{
@@ -2792,7 +3320,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Intermediate",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,{
@@ -2833,7 +3369,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Intermediate",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,{
@@ -2874,7 +3418,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Advanced",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,{
@@ -2915,7 +3467,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Advanced",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,{
@@ -2956,7 +3516,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Advanced",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
 
     ,
@@ -2998,7 +3566,15 @@ var courses = [
         coursePriceLevel: "free",
         courseLevel: "Beginner",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
     ,{
         id: 72,
@@ -3038,7 +3614,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Beginner",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
     ,
     {
@@ -3079,7 +3663,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Beginner",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
     ,
     {
@@ -3120,7 +3712,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Beginner",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
     ,
     {
@@ -3161,7 +3761,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Intermediate",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
     ,
     {
@@ -3202,7 +3810,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Intermediate",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
     ,
     {
@@ -3243,7 +3859,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Intermediate",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
     ,
     {
@@ -3284,7 +3908,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Advanced",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
     ,
     {
@@ -3325,7 +3957,15 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Advanced",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
     ,{
         id: 80,
@@ -3365,10 +4005,17 @@ var courses = [
         coursePriceLevel: "paid",
         courseLevel: "Advanced",
         courseTotalStrength: 5000,
-        courseCertificate: "Yes"
+        courseCertificate: "Yes",
+        courseImagesVideos: [
+            {
+            title: "Introduction to Javascript",
+             courseImages: "/courseImages/download.png",
+             courseVideo: "/courseVideos/Introduction to JavaScript + Setup   JavaScript Tutorial in Hindi #1.mp4",
+            
+            },
+            ],
     }
     ,
 
 
 ];
-

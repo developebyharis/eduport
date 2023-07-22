@@ -1,3 +1,5 @@
+
+
 // Dark Mode
 const storedTheme = localStorage.getItem('theme')
 
@@ -223,21 +225,8 @@ function removeFromCart(event, courseId) {
   cart = updatedCart;
 };
 
-
-  
-
-
 //   Add to cart function end here
 
-		
-
-
-		
-
-
-
-
-	
 function updateHeartIconState() {
 	const heartIcons = document.getElementsByClassName('heart-icon');
   
@@ -324,8 +313,9 @@ document.addEventListener("DOMContentLoaded", function() {
 //    Course list end here
 //   Heart function end here
 //   Course detail function start here
+// Function to generate video thumbnail
 
-
+  
 // Course Detail fetching start here
 
 function fetchCourseDetails() {
@@ -336,7 +326,7 @@ function fetchCourseDetails() {
 
     if (course) {
         const courseDetailHTML = `
-	  <div class="row py-5">
+	  <div class="row py-5" data-course-id="${course.id}">
 	  <div class="col-lg-8">
 		<!-- Badge -->
 		<h6 class="mb-3 font-base bg-primary text-white py-2 px-4 rounded-2 d-inline-block">${course.courseCategory}</h6>
@@ -424,9 +414,6 @@ function fetchCourseDetails() {
 												  <!-- List content -->
 												  <h5 class="mt-4">What you’ll learn</h5>
 												  <ul class="list-group list-group-borderless mb-3" id="courseBenefits">
-
-												  
-												  
 												  </ul>
 												  <p class="mb-0">${course.courseHighlights}</p>
 												  <!-- Course detail END -->
@@ -1724,19 +1711,20 @@ function fetchCourseDetails() {
 									  <div class="col-md-6 col-lg-12">
 										  <!-- Video START -->
 										  <div class="card shadow p-2 mb-4 z-index-9">
-											  <div class="overflow-hidden rounded-3">
-												  <img src="${course.courseImage}" id="courseImage" class="card-img" alt="course image">
-												  <!-- Overlay -->
-												  <div class="bg-overlay bg-dark opacity-6"></div>
-												  <div class="card-img-overlay d-flex align-items-start flex-column p-3">
-													  <!-- Video button and link -->
-													  <div class="m-auto">
-														  <a href="${course.courseShortVideo}" class="btn btn-lg text-danger btn-round btn-white-shadow mb-0" data-glightbox="" data-gallery="course-video">
-															  <i class="fas fa-play"></i>
-														  </a>
-													  </div>
-												  </div>
+										  <div class="overflow-hidden rounded-3">
+											<img src="${course.courseImagesVideos[0].courseImages}" id="courseImage" class="card-img" alt="course image">
+											<!-- Overlay -->
+											<div class="bg-overlay bg-dark opacity-6"></div>
+											<div class="card-img-overlay d-flex align-items-start flex-column p-3">
+											  <!-- Video button and link -->
+											  <div class="m-auto" id="video">
+												<a href="course-video-player.html?id=${course.id}" class="btn btn-lg text-danger btn-round btn-white-shadow mb-0" data-glightbox="" data-gallery="course-video">
+												  <i class="fas fa-play"></i>
+												</a>
 											  </div>
+											</div>
+										  </div>
+										</div>
 											  <!-- Card body -->
 											  <div class="card-body px-3">
 												  <!-- Info -->
@@ -1927,18 +1915,19 @@ function fetchCourseDetails() {
 						  </div>
 	  `;
 
-        courseDetailContainer.innerHTML = courseDetailHTML;
-    } else {
-        courseDetailContainer.innerHTML = "<p>Course not found!</p>";
-    }
-}
+	  courseDetailContainer.innerHTML = courseDetailHTML;
 
-if (window.location.pathname === "/course-detail.html") {
-    fetchCourseDetails();
-} else {
-    filterCourses(category)
-};
-
+	} else {
+	  courseDetailContainer.innerHTML = "<p>Course not found!</p>";
+	}
+  }
+  
+  // Check if the current page is the course detail page
+  if (window.location.pathname === "/course-detail.html") {
+	fetchCourseDetails();
+  } else {
+	filterCourses(category);
+  }
 // Generate HTML for course benefits
 var courseBenefitsHTML = Object.values(courses[0].courseBenefits[0]).map(function(benefit) {
 	return `
@@ -1954,6 +1943,28 @@ var courseBenefitsHTML = Object.values(courses[0].courseBenefits[0]).map(functio
   courseBenefitsContainer.innerHTML = courseBenefitsHTML;
 
 //   End Here
+
+//start here
+
+const video = document.getElementById('video');
+video.addEventListener('loadeddata', generateThumbnail);
+
+function generateThumbnail() {
+  const canvas = document.createElement('canvas');
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
+
+  const context = canvas.getContext('2d');
+  context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+  const thumbnailDataUrl = canvas.toDataURL('image/jpeg');
+  const thumbnailImg = document.createElement('img');
+  thumbnailImg.src = thumbnailDataUrl;
+
+  document.body.appendChild(thumbnailImg);
+}
+//end here
+
 
 
 function generateRatingStars(rating) {
@@ -1988,101 +1999,34 @@ function generateRatingStars(rating) {
 
 //   End Here
 
+  
+  
 
-// document.addEventListener("DOMContentLoaded", function() {
-// 	// Get the element where you want to display the HTML content
-// 	const trendingCoursesContainer = document.getElementById('trendingCourses');
+	// // Function to update the trending courses content
+	// function updateTrendingCourses() {
+	//   // Clear the container
+	//   trendingCoursesContainer.innerHTML = '';
   
-// 	// Initialize the trending courses array
-// 	let trendingCourses = [];
+	//   // Generate HTML for each course and append to the container
+	//   courses.forEach(function(course) {
+	// 	const courseHTML = generateCourseHTML(course);
+	// 	const courseElement = document.createElement('div');
+	// 	courseElement.innerHTML = courseHTML;
+	// 	trendingCoursesContainer.appendChild(courseElement);
   
-// 	// Function to generate HTML for a single course
-// 	function generateCourseHTML(course) {
-// 	  return `
-// 		<div class="card action-trigger-hover border bg-transparent">
-// 		  <!-- Image -->
-// 		  <img src="${course.courseImage}" class="card-img-top" alt="course image">
-// 		  <!-- Ribbon -->
-// 		  <div class="ribbon mt-3"><span>Free</span></div>
-// 		  <!-- Card body -->
-// 		  <div class="card-body pb-0">
-// 			<!-- Badge and favorite -->
-// 			<div class="d-flex justify-content-between mb-3">
-// 			  <span class="hstack gap-2">
-// 				<a href="#" class="badge bg-primary bg-opacity-10 text-primary">${course.courseCategory}</a>
-// 				<a href="#" class="badge text-bg-dark">${course.courseLevel}</a>
-// 			  </span>
-// 			  <a href="#" class="h6 fw-light mb-0"><i class="far fa-bookmark"></i></a>
-// 			</div>
-// 			<!-- Title / -->
-// 			<h5 class="card-title"><a href="#">${course.courseTitle}</a></h5>
-// 			<!-- Rating -->
-// 			<div class="d-flex justify-content-between mb-2">
-// 			  <div class="hstack gap-2">
-// 				<p class="text-warning m-0">${course.courseRating}<i class="fas fa-star text-warning ms-1"></i></p>
-// 				<span class="small">(${course.courseTotalStrength})</span>
-// 			  </div>
-// 			  <div class="hstack gap-2">
-// 				<p class="h6 fw-light mb-0 m-0">${course.courseTotalStrength}</p>
-// 				<span class="small">(Student)</span>
-// 			  </div>
-// 			</div>
-// 			<!-- Time -->
-// 			<div class="hstack gap-3">
-// 			  <span class="h6 fw-light mb-0"><i class="far fa-clock text-danger me-2"></i>${course.courseTotalHours}h ${course.courseTotalMin}m</span>
-// 			  <span class="h6 fw-light mb-0"><i class="fas fa-table text-orange me-2"></i>${course.courseTotalLectures} lectures</span>
-// 			</div>
-// 		  </div>
-// 		  <!-- Card footer -->
-// 		  <div class="card-footer pt-0 bg-transparent">
-// 			<hr>
-// 			<!-- Avatar and Price -->
-// 			<div class="d-flex justify-content-between align-items-center">
-// 			  <!-- Avatar -->
-// 			  <div class="d-flex align-items-center">
-// 				<div class="avatar avatar-sm">
-// 				  <img class="avatar-img rounded-1" src="images/10.jpg" alt="avatar">
-// 				</div>
-// 				<p class="mb-0 ms-2"><a href="#" class="h6 fw-light mb-0">Larry Lawson</a></p>
-// 			  </div>
-// 			  <!-- Price -->
-// 			  <div>
-// 				<h4 class="text-success mb-0 item-show">${course.courseCurrentPrice}</h4>
-// 				<a href="#" class="btn btn-sm btn-success-soft item-show-hover"><i class="fas fa-shopping-cart me-2"></i>Add to cart</a>
-// 			  </div>
-// 			</div>
-// 		  </div>
-// 		</div>
-// 	  `;
-// 	}
+	// 	// Add click event listener to the heart icon
+	// 	const heartIcon = courseElement.querySelector('.far.fa-heart');
+	// 	heartIcon.addEventListener('click', function() {
+	// 	  // Add the selected course to the trending courses array
+	// 	  courses.push(course);
   
-// 	// Function to update the trending courses content
-// 	function updateTrendingCourses() {
-// 	  // Clear the container
-// 	  trendingCoursesContainer.innerHTML = '';
+	// 	  // Update the trending courses content
+	// 	  updateTrendingCourses();
+	// 	});
+	//   });
+	// }
   
-// 	  // Generate HTML for each course and append to the container
-// 	  courses.forEach(function(course) {
-// 		const courseHTML = generateCourseHTML(course);
-// 		const courseElement = document.createElement('div');
-// 		courseElement.innerHTML = courseHTML;
-// 		trendingCoursesContainer.appendChild(courseElement);
-  
-// 		// Add click event listener to the heart icon
-// 		const heartIcon = courseElement.querySelector('.far.fa-heart');
-// 		heartIcon.addEventListener('click', function() {
-// 		  // Add the selected course to the trending courses array
-// 		  courses.push(course);
-  
-// 		  // Update the trending courses content
-// 		  updateTrendingCourses();
-// 		});
-// 	  });
-// 	}
-  
-// 	// Initial update of trending courses
-// 	updateTrendingCourses();
-//   });
+	// Initial update of trending courses
   
 
 
