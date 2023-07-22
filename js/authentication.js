@@ -36,7 +36,7 @@ measurementId: "G-PNJPY0B5DW"
   function showUserDetails(user) {
     document.getElementById('userDetails').innerHTML = `
     <!-- Notification dropdown START -->
-    <li class="nav-item mx-2 dropdown notification-icon">
+    <li class="nav-item mx-3 dropdown notification-icon">
         <!-- Notification button -->
         <a class="btn btn-light btn-round mb-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
             <i class="bi bi-bell fa-fw"></i>
@@ -79,7 +79,7 @@ measurementId: "G-PNJPY0B5DW"
         </div>
         <!-- Notification dropdown menu END -->
     </li>
-    <li class="nav-item ms-6 px-1 my--4 dropdown">
+    <li class="nav-item ms-6 px-2  dropdown auth-sec">
     <!-- Avatar -->
     <a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
         <img class="avatar-img rounded-circle" src="${user.photoURL}" alt="${user.displayName}">
