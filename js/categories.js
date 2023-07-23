@@ -3,14 +3,14 @@ const categories = [
     { 
         id: "webDesign",
         categoryTitle: "Web Design",
-        categoryImg: "/fonts/home.svg",
+        categoryImg: "/images/web-design.png",
         numCourses: 15,
         bgClass: "bg-primary bg-gradient",
 },
     {
         id: "Development",
         categoryTitle: "Development",
-        categoryImg: "/fonts/home.svg",
+        categoryImg: "/images/coding.png",
         numCourses: 15,
         bgClass: "bg-success bg-gradient",
      },
@@ -18,7 +18,7 @@ const categories = [
     { 
         id: "Marketing",
         categoryTitle: "Marketing",
-        categoryImg: "/fonts/home.svg",
+        categoryImg: "/images/marketing.jpg",
         numCourses: 15,
         bgClass: "bg-danger bg-gradient",
     },
@@ -32,7 +32,7 @@ const categories = [
     { 
         id: "IT",
         categoryTitle: "IT",
-        categoryImg: "/fonts/home.svg",
+        categoryImg: "/images/technical-support.png",
         numCourses: 15,
         bgClass:"bg-danger bg-gradient"
     },
@@ -54,7 +54,7 @@ const categories = [
     { 
         id: "Graphic Design",
         categoryTitle: "Graphic Design",
-        categoryImg: "/fonts/home.svg",
+        categoryImg: "/images/illustration.png",
         numCourses: 15,
         bgClass:"bg-secondary bg-gradient"
     },

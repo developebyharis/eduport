@@ -1,4 +1,3 @@
-var tns = (function() {
     var win = window;
 
     var raf = win.requestAnimationFrame || win.webkitRequestAnimationFrame || win.mozRequestAnimationFrame || win.msRequestAnimationFrame || function(cb) {
