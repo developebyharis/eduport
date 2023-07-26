@@ -111,7 +111,11 @@ measurementId: "G-PNJPY0B5DW"
     <!-- Profile dropdown END -->
     </li>
       
-    `
+    `;
+
+     // Store user information in localStorage
+  localStorage.setItem('userDisplayName', user.displayName);
+  localStorage.setItem('userPhotoURL', user.photoURL);
   };
 
   function checkAuthState(){
@@ -136,3 +140,20 @@ measurementId: "G-PNJPY0B5DW"
     });
   };
   checkAuthState();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
