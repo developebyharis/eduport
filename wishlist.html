@@ -415,12 +415,12 @@ Page Banner END -->
             <!-- =======================
 Page content START -->
             <section class="pt-5">
-                <div class="container">
+                <div class="container ">
                     <!-- Content and button -->
                     <div class="d-sm-flex justify-content-sm-between align-items-center mb-4">
                         <h5 class="mb-2 mb-sm-0">You have 4 items in wishlist</h5>
                         <div class="text-end">
-                            <button class="btn btn-danger-soft mb-0">
+                            <button class="btn btn-danger-soft mb-0" id="removeButton" onclick="removeAllFromWishlist()">
                                 <i class="fas fa-trash me-2"></i>
                                 Remove all
                             </button>
@@ -644,5 +644,6 @@ Footer END -->
         <script src="js/checkout.js"></script>
         <script src="js/course-detail-array.js"></script>
         <script src="js/wishlist.js"></script>
+		<script src="js/wishCount.js"></script>
     </body>
 </html>

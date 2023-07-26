@@ -80,7 +80,7 @@ function filterCourses(category) {
 				<div class="card-body pb-0">
 				  <div class="d-flex justify-content-between mb-2">
 					<a href="#"  class="badge bg-success bg-opacity-10 text-success">${course.courseLevel}</a>
-					<i class="heart-icon far fa-heart" data-course-id="${course.id}"></i>
+					<i class="heart-icon far fa-heart" data-course-id="${course.id}" onclick="addToWishlist(${course.id})"></i>
 			    </div>
 				  <h5 class="card-title fw-normal">
 				  <a class="course-link" href="course-detail.html?id=${course.id}">${course.courseTitle}</a>
@@ -124,6 +124,18 @@ function filterCourses(category) {
 	updateHeartIconState();
 };
 
+
+
+
+
+
+  
+ 
+  
+// Wishlist Function
+
+
+//   End here
 
 // // Initialize cart count from local storage or default to 0
 var cartCount = parseInt(localStorage.getItem("cartCount")) || 0;
@@ -227,29 +239,6 @@ function removeFromCart(event, courseId) {
 
 //   Add to cart function end here
 
-function updateHeartIconState() {
-	const heartIcons = document.getElementsByClassName('heart-icon');
-  
-	for (let i = 0; i < heartIcons.length; i++) {
-	  const heartIcon = heartIcons[i];
-	  const courseId = heartIcon.dataset.courseId;
-  
-	  const storedState = localStorage.getItem(`heartIconState-${courseId}`);
-	  if (storedState === 'true') {
-		heartIcon.classList.add('fas', 'text-danger');
-	  } else {
-		heartIcon.classList.remove('fas', 'text-danger');
-	  }
-  
-	  heartIcon.addEventListener('click', function() {
-		this.classList.toggle('fas');
-		this.classList.toggle('text-danger');
-  
-		const currentState = this.classList.contains('fas');
-		localStorage.setItem(`heartIconState-${courseId}`, currentState);
-	  });
-	}
-  }
   
 
 // this event listner activeate the selected category and 

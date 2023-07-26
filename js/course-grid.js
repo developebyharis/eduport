@@ -21,8 +21,8 @@ function generateCourseCard(course) {
           <div class="d-flex justify-content-between mb-2">
 
             <a href="course-detail.html?id=${course.id}" class="badge bg-success bg-opacity-10 text-success">${course.courseLevel}</a>
-            <i class="heart-icon far fa-heart" data-course-id="${course.id}"></i>
-          </div>
+            <i class="heart-icon far fa-heart" data-course-id="${course.id}" onclick="addToWishlist(${course.id})"></i>
+            </div>
           <!-- Title -->
           <h5 class="card-title">
          
@@ -565,3 +565,5 @@ checkboxes.forEach(checkbox => {
 
 
 // End here
+
+  
