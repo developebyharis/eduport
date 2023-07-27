@@ -1,5 +1,8 @@
+
 // Function to display the user information in the student dashboard
 function displayUserDetails(user) {
+  const [firstName, lastName] = user.displayName.split(' ');
+
   const dashboardContainer = document.getElementById('studentDashboard');
 
   const studentDashboardHTML = `
@@ -17,7 +20,7 @@ function displayUserDetails(user) {
       <!-- Profile info -->
       <div class="col d-sm-flex justify-content-between align-items-center">
         <div>
-          <h1 class="my-1 fs-4">${user.displayName}</h1>
+          <h1 class="my-1 fs-4">${firstName} ${lastName}</h1>
           <ul class="list-inline mb-0">
             <li class="list-inline-item me-3 mb-1 mb-sm-0">
               <span class="h6">255</span>
@@ -53,23 +56,77 @@ function displayUserDetails(user) {
 `;
 
   dashboardContainer.innerHTML = studentDashboardHTML;
-}
-
-// Retrieve the user information from localStorage and display it in the student dashboard
-document.addEventListener('DOMContentLoaded', () => {
-  const displayName = localStorage.getItem('userDisplayName');
-  const photoURL = localStorage.getItem('userPhotoURL');
-
-  if (displayName && photoURL) {
-    const user = {
-      displayName: displayName,
-      photoURL: photoURL
-    };
-
-    displayUserDetails(user);
-  }
-});
+   // Set the user information in the "Edit Profile" section
+   document.getElementById('profileImage').setAttribute('src', user.photoURL);
+   document.getElementById('firstName').value = firstName;
+   document.getElementById('lastName').value = lastName;
+   document.getElementById('username').value = user.username;
+   document.getElementById('email').value = user.email;
+   document.getElementById('phoneNumber').value = user.phoneNumber;
+   document.getElementById('location').value = user.location;
+   document.getElementById('aboutMe').value = user.aboutMe;
+   document.getElementById('education').value = user.education;
 
 
+
+   // Add event listeners to update user object when inputs change
+   document.getElementById('username').addEventListener('input', (event) => {
+     user.username = event.target.value;
+     // Save the updated username to localStorage
+     localStorage.setItem('username', event.target.value);
+   });
+
+   document.getElementById('phoneNumber').addEventListener('input', (event) => {
+     user.phoneNumber = event.target.value;
+     // Save the updated phoneNumber to localStorage
+     localStorage.setItem('userPhoneNumber', event.target.value);
+   });
+
+   document.getElementById('location').addEventListener('input', (event) => {
+     user.location = event.target.value;
+     // Save the updated location to localStorage
+     localStorage.setItem('userLocation', event.target.value);
+   });
+
+   document.getElementById('aboutMe').addEventListener('input', (event) => {
+     user.aboutMe = event.target.value;
+     // Save the updated aboutMe to localStorage
+     localStorage.setItem('userAboutMe', event.target.value);
+   });
+   document.getElementById('education').addEventListener('input', (event) => {
+    user.education = event.target.value;
+    // Save the updated aboutMe to localStorage
+    localStorage.setItem('userEducation', event.target.value);
+  });
+ }
+
+ document.addEventListener('DOMContentLoaded', () => {
+   const firstName = localStorage.getItem('userDisplayFirstName');
+   const lastName = localStorage.getItem('userDisplayLastName');
+   const photoURL = localStorage.getItem('userPhotoURL');
+   const userEmail = localStorage.getItem('userEmail');
+   const username = localStorage.getItem('username');
+   const userPhoneNumber = localStorage.getItem('userPhoneNumber');
+   const userLocation = localStorage.getItem('userLocation');
+   const userAboutMe = localStorage.getItem('userAboutMe');
+   const userEducation = localStorage.getItem('userEducation')
+
+   if (firstName && lastName && photoURL && userEmail) {
+     const user = {
+       displayName: `${firstName} ${lastName}`,
+       photoURL: photoURL,
+       firstName: `${firstName}`,
+       lastName: `${lastName}`,
+       username: username || '',
+       email: userEmail,
+       phoneNumber: userPhoneNumber || '',
+       location: userLocation || '',
+       aboutMe: userAboutMe || '',
+       education: userEducation || '',
+     };
+
+     displayUserDetails(user);
+   }
+ });
 
 

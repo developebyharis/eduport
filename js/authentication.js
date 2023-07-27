@@ -34,6 +34,7 @@ measurementId: "G-PNJPY0B5DW"
   };
 
   function showUserDetails(user) {
+    const [firstName, lastName] = user.displayName.split(' ');
     document.getElementById('userDetails').innerHTML = `
     <!-- Notification dropdown START -->
     <li class="nav-item mx-3 dropdown notification-icon">
@@ -82,7 +83,7 @@ measurementId: "G-PNJPY0B5DW"
     <li class="nav-item ms-6 px-2  dropdown auth-sec">
     <!-- Avatar -->
     <a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
-        <img class="avatar-img rounded-circle" src="${user.photoURL}" alt="${user.displayName}">
+        <img class="avatar-img rounded-circle" src="${user.photoURL}" alt="${firstName} ${lastName}">
     </a>
 
     <!-- Profile dropdown START -->
@@ -92,10 +93,10 @@ measurementId: "G-PNJPY0B5DW"
             <div class="d-flex align-items-center">
                 <!-- Avatar -->
                 <div class="avatar me-3">
-                    <img class="avatar-img rounded-circle shadow" src="${user.photoURL}" alt="${user.displayName}">
+                    <img class="avatar-img rounded-circle shadow" src="${user.photoURL}" alt="${firstName} ${lastName}">
                 </div>
                 <div>
-                    <a class="h6" href="#">${user.displayName}</a>
+                    <a class="h6" href="#">${firstName} ${lastName}</a>
                     <p class="small m-0">${user.email}</p>
                 </div>
             </div>
@@ -114,8 +115,11 @@ measurementId: "G-PNJPY0B5DW"
     `;
 
      // Store user information in localStorage
-  localStorage.setItem('userDisplayName', user.displayName);
-  localStorage.setItem('userPhotoURL', user.photoURL);
+     localStorage.setItem('userDisplayFirstName', firstName);
+     localStorage.setItem('userDisplayLastName', lastName);
+     localStorage.setItem('userPhotoURL', user.photoURL);
+     localStorage.setItem('userEmail', user.email); // Corrected line here
+
   };
 
   function checkAuthState(){
